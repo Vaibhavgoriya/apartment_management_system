@@ -1,5 +1,4 @@
-
-const Userapp = () => {
+const Adminapp = () => {
   return (
     <>
       <div className="wrapper">
@@ -338,4 +337,4 @@ const Userapp = () => {
   );
 };
 
-export default Userapp;
+export default Adminapp;

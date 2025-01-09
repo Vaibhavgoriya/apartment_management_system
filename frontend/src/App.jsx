@@ -1,9 +1,9 @@
-import Userapp from "./adminpanel/Components/Userapp";
+import Adminapp from "./adminpanel/Components/adminapp";
 
 function App() {
   return (
     <>
-      <Userapp />
+      <Adminapp />
     </>
   );
 }
