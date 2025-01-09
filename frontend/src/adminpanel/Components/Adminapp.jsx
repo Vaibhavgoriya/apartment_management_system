@@ -1,10 +1,21 @@
 import { useState } from "react";
+import avatarImage from "../Assets/image/account.png"; // Adjust the path if needed
 
 const Adminapp = () => {
   const [isSidebarExpanded, setIsSidebarExpanded] = useState(false);
+  const [isAuthOpen, setIsAuthOpen] = useState(false); // Added state for Auth dropdown
+  const [isMultiOpen, setIsMultiOpen] = useState(false); // Added state for Multi dropdown
 
   const toggleSidebar = () => {
     setIsSidebarExpanded((prevState) => !prevState);
+  };
+
+  const toggleAuthDropdown = () => {
+    setIsAuthOpen((prevState) => !prevState);
+  };
+
+  const toggleMultiDropdown = () => {
+    setIsMultiOpen((prevState) => !prevState);
   };
 
   return (
@@ -37,6 +48,61 @@ const Adminapp = () => {
               </a>
             </li>
             <li className="sidebar-item">
+              <a
+                href="#"
+                className="sidebar-link collapsed has-dropdown"
+                onClick={toggleAuthDropdown}
+              >
+                <i className="lni lni-protection"></i>
+                <span>Auth</span>
+              </a>
+              {isAuthOpen && (
+                <ul className="sidebar-dropdown list-unstyled">
+                  <li className="sidebar-item">
+                    <a href="#" className="sidebar-link">
+                      Login
+                    </a>
+                  </li>
+                  <li className="sidebar-item">
+                    <a href="#" className="sidebar-link">
+                      Register
+                    </a>
+                  </li>
+                </ul>
+              )}
+            </li>
+            <li className="sidebar-item">
+              <a
+                href="#"
+                className="sidebar-link collapsed has-dropdown"
+                onClick={toggleMultiDropdown}
+              >
+                <i className="lni lni-layout"></i>
+                <span>Multi Level</span>
+              </a>
+              {isMultiOpen && (
+                <ul className="sidebar-dropdown list-unstyled">
+                  <li className="sidebar-item">
+                    <a href="#" className="sidebar-link">
+                      Two Links
+                    </a>
+                    <ul className="sidebar-dropdown list-unstyled">
+                      <li className="sidebar-item">
+                        <a href="#" className="sidebar-link">
+                          Link 1
+                        </a>
+                      </li>
+                      <li className="sidebar-item">
+                        <a href="#" className="sidebar-link">
+                          Link 2
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              )}
+            </li>
+            <li className="sidebar-item">
               <a href="#" className="sidebar-link">
                 <i className="lni lni-popup"></i>
                 <span>Notification</span>
@@ -67,7 +133,7 @@ const Adminapp = () => {
                     className="nav-icon pe-md-0"
                   >
                     <img
-                      src="/account.png"
+                      src={ avatarImage }
                       className="avatar img-fluid"
                       alt="User Avatar"
                     />
@@ -83,7 +149,46 @@ const Adminapp = () => {
             <div className="container-fluid">
               <div className="mb-3">
                 <h3 className="fw-bold fs-4 mb-3">Admin Dashboard</h3>
-                <div className="row">{/* Stat cards */}</div>
+                <div className="row">
+                  {/* Repeat this block for each stat card */}
+                  <div className="col-12 col-md-4">
+                    <div className="card border-0">
+                      <div className="card-body py-4">
+                        <h5 className="mb-2 fw-bold">Members Progress</h5>
+                        <p className="mb-2 fw-bold">$72,540</p>
+                        <div className="mb-0">
+                          <span className="badge text-success me-2">+9.0%</span>
+                          <span className="fw-bold">Since Last Month</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-12 col-md-4">
+                    <div className="card border-0">
+                      <div className="card-body py-4">
+                        <h5 className="mb-2 fw-bold">Members Progress</h5>
+                        <p className="mb-2 fw-bold">$72,540</p>
+                        <div className="mb-0">
+                          <span className="badge text-success me-2">+9.0%</span>
+                          <span className="fw-bold">Since Last Month</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-12 col-md-4">
+                    <div className="card border-0">
+                      <div className="card-body py-4">
+                        <h5 className="mb-2 fw-bold">Members Progress</h5>
+                        <p className="mb-2 fw-bold">$72,540</p>
+                        <div className="mb-0">
+                          <span className="badge text-success me-2">+9.0%</span>
+                          <span className="fw-bold">Since Last Month</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
                 <h3 className="fw-bold fs-4 my-3">Avg. Agent Earnings</h3>
                 <div className="row">
                   <div className="col-12">

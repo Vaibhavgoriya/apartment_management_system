@@ -22,6 +22,7 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  height: 100%;
 }
 
 /* Main Layout */
@@ -29,6 +30,8 @@ body {
   display: flex;
   min-height: 100vh;
   transition: all 0.35s ease-in-out;
+  flex-direction: row;
+  width: 100%;
 }
 
 /* Sidebar */
@@ -178,13 +181,16 @@ a.sidebar-link:hover {
 /* Content Styling */
 .content {
   padding: 20px;
+  height: calc(100vh - 60px); /* Full height minus navbar height */
+  overflow-y: auto;
+  margin-bottom: 80px; /* Allow space for footer */
 }
 
 /* Footer */
 .footer {
   background-color: #f5f5f5;
   padding: 20px;
-  position: absolute;
+  position: relative;
   bottom: 0;
   width: 100%;
 }
@@ -220,5 +226,11 @@ a.sidebar-link:hover {
 
   .main {
     margin-left: 0;
+    padding-top: 60px; /* Added space for navbar */
+  }
+
+  .content {
+    height: auto;
+    margin-bottom: 0;
   }
 }
