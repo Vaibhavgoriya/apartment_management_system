@@ -6,7 +6,7 @@ import Footer from "./Footer";
 import Profile from "./Profile";
 import Dashboardcontent from "./Dashboardcontent";
 
-const App = () => {
+const Adminapp = () => {
   const [isSidebarExpanded, setIsSidebarExpanded] = useState(false);
 
   const toggleSidebar = () => {
@@ -38,4 +38,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Adminapp;
