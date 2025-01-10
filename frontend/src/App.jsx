@@ -1,9 +1,12 @@
-import Userapp from "./adminpanel/Components/Userapp";
+//import Userapp from "./adminpanel/Components/Userapp";
+import Footer from "./userpanel/Components/Footer";
+import Navbar from "./userpanel/Components/navbar";
 
 function App() {
   return (
     <>
-      <Userapp />
+      <Navbar />
+      <Footer/>
     </>
   );
 }
