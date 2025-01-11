@@ -1,131 +1,68 @@
 /* General Styles */
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-  }
-  
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Ensure consistent spacing */
+.navbar-nav .nav-link {
+  padding: 0.5rem 1rem;
+}
+/* Highlight the active link */
+.nav-link.active {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+/* Hover effect for Sign In button */
+.btn-warning:hover {
+  background-color: #ffd54f; /* Lighter yellow */
+  color: white;
+}
+
+/* Footer Styles */
+/* Add spacing between social icons */
+.gap-3 .fa {
+  font-size: 1.5rem;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.gap-3 .fa:hover {
+  color: #fbbd14; /* Highlight on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background-color: #000033; /* Navy Blue */
-    color: white;
-  }
-  
-  .navbar-logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  
-  .navbar-links {
-    display: flex;
-    gap: 1.5rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .navbar-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 1rem;
-  }
-  
-  .navbar-links a:hover,
-  .navbar-links a.active {
-    text-decoration: underline;
-  }
-  
-  .navbar-signin {
-    padding: 0.5rem 1rem;
-    background-color: #fbbd14;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    color: white;
-    font-weight: bold;
-  }
-  
-  .navbar-signin:hover {
-    background-color: #ffd54f;
-  }
-  
-  /* Footer Styles */
-  .footer {
-    background-color: black;
-    color: white;
-    padding: 2rem 0;
-    text-align: center;
-  }
-  
-  .footer-container {
-    display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
   }
-  
-  .footer-section {
-    flex: 1 1 200px;
-    padding: 1rem;
+
+  .navbar-links {
+    flex-direction: column;
+    align-items: center;
+    display: none; /* Initially hidden for mobile */
   }
-  
-  .footer-social {
-    margin-top: 1rem;
+
+  .navbar-links.active {
+    display: flex; /* Show when active */
   }
-  
-  .footer-social .social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-  }
-  
-  .footer-bottom {
-    margin-top: 1rem;
-  }
-  
-  .footer-bottom a {
+
+  .navbar-toggler {
+    display: block;
+    background: none;
+    border: none;
     color: white;
-    text-decoration: none;
-    margin: 0 0.5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
   }
-  
-  .footer-bottom a:hover {
-    text-decoration: underline;
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
   }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .navbar {
-      flex-wrap: wrap;
-    }
-  
-    .navbar-links {
-      flex-direction: column;
-      align-items: center;
-      display: none; /* Initially hidden for mobile */
-    }
-  
-    .navbar-links.active {
-      display: flex; /* Show when active */
-    }
-  
-    .navbar-toggler {
-      display: block;
-      background: none;
-      border: none;
-      color: white;
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-  
-    .footer-container {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .footer-section {
-      text-align: center;
-    }
+
+  .footer-section {
+    text-align: center;
   }
-  
+}
