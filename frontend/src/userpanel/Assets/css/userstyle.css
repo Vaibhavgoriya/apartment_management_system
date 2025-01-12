@@ -1,0 +1,68 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Ensure consistent spacing */
+.navbar-nav .nav-link {
+  padding: 0.5rem 1rem;
+}
+/* Highlight the active link */
+.nav-link.active {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+/* Hover effect for Sign In button */
+.btn-warning:hover {
+  background-color: #ffd54f; /* Lighter yellow */
+  color: white;
+}
+
+/* Footer Styles */
+/* Add spacing between social icons */
+.gap-3 .fa {
+  font-size: 1.5rem;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.gap-3 .fa:hover {
+  color: #fbbd14; /* Highlight on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    align-items: center;
+    display: none; /* Initially hidden for mobile */
+  }
+
+  .navbar-links.active {
+    display: flex; /* Show when active */
+  }
+
+  .navbar-toggler {
+    display: block;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-section {
+    text-align: center;
+  }
+}
