@@ -1,4 +1,4 @@
-import "../Assets/css/style.css"; // Minimal additional custom styles
+import "../Assets/css/userstyle.css"; // Minimal additional custom styles
 
 const Footer = () => {
   return (
