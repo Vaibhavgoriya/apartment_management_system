@@ -15,7 +15,7 @@ const Sidebar = () => {
           <i className="bi bi-grid"></i> {/* Sidebar toggle icon */}
         </button>
         <div className="sidebar-logo">
-          <NavLink to="/dashboardcontent" className="navbar-brand">
+          <NavLink to="/dashboardcontent" className="navbar-brand fs-2">
             RNV
           </NavLink>{" "}
           {/* Branding for Sidebar */}
@@ -89,7 +89,21 @@ const Sidebar = () => {
             }
           >
             <i className="bi bi-person"></i> {/* Example: Person icon */}
-            <span>Admin Visitor Management Page</span>
+            <span>Visitor Management</span>
+          </NavLink>
+        </li>
+        <li className="sidebar-item">
+          <NavLink
+            to="/adminVehicleInfoPage"
+            className={({ isActive }) =>
+              `sidebar-link d-flex align-items-center gap-2 ${
+                isActive ? "active" : ""
+              }`
+            }
+          >
+            <i className="bi bi-car-front"></i>{" "}
+            {/* Replaced with a car icon for better context */}
+            <span>Vehicle Info</span>
           </NavLink>
         </li>
         <li className="sidebar-item">

@@ -130,15 +130,18 @@ const AdminVisitorManagementPage = () => {
   };
 
   return (
-    <div className="container mt-4 bg-light">
+    <div className="container-fluid mt-4 py-5 px-5 bg-light">
       <h3 className="fw-bold">Admin - Visitor Management</h3>
+      <p className="text-muted">
+        Manage visitor requests, check-ins, and check-outs for residents.
+      </p>
 
       {/* Pending Approvals Section */}
       <div className="mt-4">
         <h5 className="fw-bold">Pending Approvals</h5>
         <div className="table-responsive">
-          <table className="table table-bordered">
-            <thead>
+          <table className="table table-bordered table-striped table-hover">
+            <thead className="table-dark">
               <tr>
                 <th>ID</th>
                 <th>Visitor</th>
@@ -181,8 +184,8 @@ const AdminVisitorManagementPage = () => {
       <div className="mt-4">
         <h5 className="fw-bold">Visitor Log</h5>
         <div className="table-responsive">
-          <table className="table table-bordered">
-            <thead>
+          <table className="table table-bordered table-striped table-hover">
+            <thead className="table-dark">
               <tr>
                 <th>ID</th>
                 <th>Visitor</th>

@@ -69,21 +69,24 @@ const AdminHallBookingPage = () => {
   };
 
   return (
-    <div className="container-fluid bg-light">
+    <div className="container-fluid bg-light mt-4 py-5 px-5">
       {" "}
       {/* Light background for the entire page */}
       {/* Header */}
-      <div className="row py-4">
+      <div className="row">
         <div className="col">
-          <h3 className="fw-bold fs-4">Admin - Community Hall Management</h3>
+          <h2 className="fw-bold">Admin - Community Hall Management</h2>
+          <p className="text-muted">
+            Manage the Hall Bookings and statuses for all apartments.
+          </p>
         </div>
       </div>
       {/* Booking Requests Section */}
-      <div className="mt-4 bg-light p-4 rounded">
+      <div className="mt-4 bg-light rounded">
         <h5 className="fw-bold">Booking Requests</h5>
         <div className="table-responsive">
-          <table className="table table-bordered">
-            <thead>
+          <table className="table table-bordered table-hover table-striped">
+            <thead className="table-dark">
               <tr>
                 <th>Booking ID</th>
                 <th>User</th>
