@@ -5,7 +5,7 @@ const Navbar = () => {
     <nav className="navbar navbar-expand-lg px-4 py-3">
       <div className="container-fluid">
         {/* Title */}
-        <a className="navbar-brand fw-bold" href="#">
+        <a className="navbar-brand fw-bold fs-3" href="#">
           My Dashboard
         </a>
 

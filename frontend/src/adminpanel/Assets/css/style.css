@@ -86,6 +86,37 @@ body {
 #sidebar.expand .sidebar-link span {
   animation: fadeIn 0.25s ease;
 }
+/* Sidebar Link Hover */
+.sidebar-link {
+  color: #fff;
+  padding: 0.625rem 1.625rem;
+  display: block;
+  font-size: 0.9rem;
+  border-left: 3px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.sidebar-link:hover {
+  background-color: rgba(255, 255, 255, 0.075);
+  border-left: 3px solid #3b7ddd;
+}
+
+/* Sidebar Active Link */
+.sidebar-link.active {
+  background-color: rgba(59, 125, 221, 0.2);
+  border-left: 3px solid #3b7ddd;
+  font-weight: 600;
+}
+
+/* Dropdown Styling */
+.sidebar-dropdown .sidebar-link {
+  color: #333;
+}
+
+.sidebar-dropdown .sidebar-link.active {
+  background-color: rgba(59, 125, 221, 0.1);
+  font-weight: 600;
+}
 
 @keyframes fadeIn {
   0% {
