@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Sidebar = () => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -12,115 +12,156 @@ const Sidebar = () => {
     <aside id="sidebar" className={isExpanded ? "expand" : ""}>
       <div className="d-flex">
         <button className="toggle-btn" type="button" onClick={toggleSidebar}>
-          <i className="lni lni-grid-alt"></i>
+          <i className="bi bi-grid"></i> {/* Sidebar toggle icon */}
         </button>
         <div className="sidebar-logo">
-          <a href="#">CodzSword</a>
+          <NavLink to="/dashboardcontent" className="navbar-brand">
+            RNV
+          </NavLink>{" "}
+          {/* Branding for Sidebar */}
         </div>
       </div>
       <ul className="sidebar-nav">
         <li className="sidebar-item">
-          <Link to="/dashboardcontent" className="sidebar-link">
-            <i className="lni lni-dashboard me-2"></i>
-            <span>Dashboardcontent</span>
-          </Link>
+          <NavLink
+            to="/dashboardcontent"
+            className={({ isActive }) =>
+              `sidebar-link ${isActive ? "active" : ""}`
+            }
+          >
+            <i className="bi bi-house-door me-2"></i> {/* Home icon */}
+            <span>Dashboard</span>
+          </NavLink>
         </li>
         <li className="sidebar-item">
-          <Link to="/profile" className="sidebar-link">
-            <i className="lni lni-user"></i>
-            <span>Profile</span>
-          </Link>
+          <NavLink
+            to="/adminMaintenancePage"
+            className={({ isActive }) =>
+              `sidebar-link ${isActive ? "active" : ""}`
+            }
+          >
+            <i className="bi bi-gear-fill"></i>{" "}
+            {/* Tools icon for Maintenance */}
+            <span>Maintenance</span>
+          </NavLink>
         </li>
         <li className="sidebar-item">
-          <Link to="/task" className="sidebar-link">
-            <i className="lni lni-agenda"></i>
-            <span>Task</span>
-          </Link>
+          <NavLink
+            to="/adminComplaints"
+            className={({ isActive }) =>
+              `sidebar-link ${isActive ? "active" : ""}`
+            }
+          >
+            <i className="bi bi-exclamation-circle-fill"></i>{" "}
+            {/* Complaints icon */}
+            <span>Complaints</span>
+          </NavLink>
         </li>
-        {/* Auth Dropdown */}
+        <li className="sidebar-item">
+          <NavLink
+            to="/adminHallBookingPage"
+            className={({ isActive }) =>
+              `sidebar-link ${isActive ? "active" : ""}`
+            }
+          >
+            <i className="bi bi-calendar-check-fill"></i>{" "}
+            {/* Calendar Check icon for Hall Booking */}
+            <span>Hall Booking</span>
+          </NavLink>
+        </li>
+        <li className="sidebar-item">
+          <NavLink
+            to="/adminNoticeBoardPage"
+            className={({ isActive }) =>
+              `sidebar-link ${isActive ? "active" : ""}`
+            }
+          >
+            <i className="bi bi-postcard"></i>{" "}
+            {/* Postcard icon for Notice Board */}
+            <span>Notice Board</span>
+          </NavLink>
+        </li>
+        <li className="sidebar-item">
+          <NavLink
+            to="/adminVisitorManagementPage"
+            className={({ isActive }) =>
+              `sidebar-link ${isActive ? "active" : ""}`
+            }
+          >
+            <i className="bi bi-person"></i> {/* Example: Person icon */}
+            <span>Admin Visitor Management Page</span>
+          </NavLink>
+        </li>
         <li className="sidebar-item">
           <a
             href="#auth"
-            className="sidebar-link collapsed has-dropdown"
+            className="sidebar-link has-dropdown"
             data-bs-toggle="collapse"
             aria-expanded="false"
             aria-controls="auth"
           >
-            <i className="lni lni-protection"></i>
-            <span>Auth</span>
+            <i className="bi bi-shield-lock"></i>{" "}
+            {/* Lock icon for Authentication */}
+            <span>Authentication</span>
           </a>
           <ul id="auth" className="sidebar-dropdown list-unstyled collapse">
             <li className="sidebar-item">
-              <Link to="/login" className="sidebar-link">
+              <NavLink
+                to="/login"
+                className={({ isActive }) =>
+                  `sidebar-link ${isActive ? "active" : ""}`
+                }
+              >
+                <i className="bi bi-box-arrow-in-right"></i> {/* Login icon */}
                 Login
-              </Link>
+              </NavLink>
             </li>
             <li className="sidebar-item">
-              <Link to="/register" className="sidebar-link">
+              <NavLink
+                to="/register"
+                className={({ isActive }) =>
+                  `sidebar-link ${isActive ? "active" : ""}`
+                }
+              >
+                <i className="bi bi-person-plus"></i> {/* Register icon */}
                 Register
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </li>
-        {/* Multi-Level Dropdown */}
         <li className="sidebar-item">
-          <a
-            href="#multi"
-            className="sidebar-link collapsed has-dropdown"
-            data-bs-toggle="collapse"
-            aria-expanded="false"
-            aria-controls="multi"
+          <NavLink
+            to="/notification"
+            className={({ isActive }) =>
+              `sidebar-link ${isActive ? "active" : ""}`
+            }
           >
-            <i className="lni lni-layout"></i>
-            <span>Multi Level</span>
-          </a>
-          <ul id="multi" className="sidebar-dropdown list-unstyled collapse">
-            <li className="sidebar-item">
-              <a
-                href="#multi-two"
-                className="sidebar-link collapsed"
-                data-bs-toggle="collapse"
-                aria-expanded="false"
-                aria-controls="multi-two"
-              >
-                Two Links
-              </a>
-              <ul
-                id="multi-two"
-                className="sidebar-dropdown list-unstyled collapse"
-              >
-                <li className="sidebar-item">
-                  <Link to="/link1" className="sidebar-link">
-                    Link 1
-                  </Link>
-                </li>
-                <li className="sidebar-item">
-                  <Link to="/link2" className="sidebar-link">
-                    Link 2
-                  </Link>
-                </li>
-              </ul>
-            </li>
-          </ul>
+            <i className="bi bi-bell-fill"></i> {/* Notification icon */}
+            <span>Notifications</span>
+          </NavLink>
         </li>
         <li className="sidebar-item">
-          <Link to="/notification" className="sidebar-link">
-            <i className="lni lni-popup"></i>
-            <span>Notification</span>
-          </Link>
-        </li>
-        <li className="sidebar-item">
-          <Link to="/settings" className="sidebar-link">
-            <i className="lni lni-cog"></i>
+          <NavLink
+            to="/settings"
+            className={({ isActive }) =>
+              `sidebar-link ${isActive ? "active" : ""}`
+            }
+          >
+            <i className="bi bi-gear"></i> {/* Settings icon */}
             <span>Settings</span>
-          </Link>
+          </NavLink>
         </li>
       </ul>
       <div className="sidebar-footer">
-        <a href="#" className="sidebar-link">
-          <i className="lni lni-exit"></i>
+        <NavLink
+          to="/logout"
+          className={({ isActive }) =>
+            `sidebar-link ${isActive ? "active" : ""}`
+          }
+        >
+          <i className="bi bi-box-arrow-left"></i> {/* Logout icon */}
           <span>Logout</span>
-        </a>
+        </NavLink>
       </div>
     </aside>
   );
