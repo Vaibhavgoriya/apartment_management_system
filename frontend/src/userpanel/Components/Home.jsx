@@ -1,72 +1,76 @@
-import { Link } from "react-router-dom";
+import React from "react";
 
-const HomePage = () => {
-  const cardStyle = {
-    border: "1px solid #ddd",
-    borderRadius: "8px",
-    padding: "20px",
-    textAlign: "center",
-    backgroundColor: "#f9f9f9",
-    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-  };
-
-  const containerStyle = {
-    display: "grid",
-    gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-    gap: "20px",
-    maxWidth: "800px",
-    margin: "20px auto",
-    fontFamily: "Arial, sans-serif",
-  };
-
+function App() {
   return (
-    <div style={{ padding: "20px", textAlign: "center" }}>
-      <h1>Welcome to the Apartment Management System</h1>
-      <p>Manage everything related to your apartment easily!</p>
-
-      <div style={containerStyle}>
-        <div style={cardStyle}>
-          <h3>Book a Hall</h3>
-          <p>Reserve a hall for your events and gatherings.</p>
-          <Link to="/booking" style={{ textDecoration: "none", color: "#4CAF50" }}>
-            Go to Booking
-          </Link>
-        </div>
-
-        <div style={cardStyle}>
-          <h3>Maintenance</h3>
-          <p>View and manage maintenance details.</p>
-          <Link to="/maintenance" style={{ textDecoration: "none", color: "#4CAF50" }}>
-            View Maintenance
-          </Link>
-        </div>
-
-        <div style={cardStyle}>
-          <h3>Complaints</h3>
-          <p>Submit or check complaints for your apartment.</p>
-          <Link to="/complaints" style={{ textDecoration: "none", color: "#4CAF50" }}>
-            File a Complaint
-          </Link>
-        </div>
-
-        <div style={cardStyle}>
-          <h3>Noticeboard</h3>
-          <p>Check important notices for residents.</p>
-          <Link to="/noticeboard" style={{ textDecoration: "none", color: "#4CAF50" }}>
-            View Notices
-          </Link>
-        </div>
-
-        <div style={cardStyle}>
-          <h3>Vehicle Information</h3>
-          <p>Manage and view vehicle details.</p>
-          <Link to="/vehicle-info" style={{ textDecoration: "none", color: "#4CAF50" }}>
-            Vehicle Info
-          </Link>
+    <div className="container-fluid bg-light">
+      {" "}
+      {/* Fluid container for full width, light background */}
+      <div className="container mt-4">
+        {" "}
+        {/* Main content container with top margin */}
+        <div className="row">
+          {[1, 2, 3, 4].map(
+            (
+              i // Map to create 4 cards
+            ) => (
+              <div className="col-md-3 mb-4" key={i}>
+                {" "}
+                {/* Responsive columns, margin bottom */}
+                <div className="card">
+                  <div className="card-body">
+                    <h5 className="card-title">Nisha Tal</h5>{" "}
+                    {/* Example name */}
+                    <p className="card-text">Flat No - X0{i}</p>
+                    <p className="card-text">Wing - A</p>
+                    <p className="card-text">Mobile No - 20000000{i}</p>
+                    <div style={{ display: "flex", justifyContent: "center" }}>
+                      <a href="#" className="btn btn-primary">
+                        Know More
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )
+          )}
         </div>
       </div>
+      <footer className="bg-dark text-light py-3 mt-4">
+        {" "}
+        {/* Footer with dark background, light text, padding */}
+        <div className="container">
+          <div className="row">
+            <div className="col-md-4">
+              <p>Copyright © 2023 RNV</p>
+              <p>Designed by RNV</p>
+            </div>
+            <div className="col-md-4 text-center">
+              <h5>About Us</h5>
+              <p>
+                To bridge the gap between residents and management through
+                intuitive technology, ensuring better communication,
+                transparency, and convenience for all.
+              </p>
+            </div>
+            <div className="col-md-4 text-end">
+              <h5>Contact Info</h5>
+              <p>Umiya Chowck, Rajkot, Gujarat</p>
+              <p>+91 7984767882</p>
+              <p>mw123@gmail.com</p>
+            </div>
+          </div>
+          <div className="row mt-2">
+            <div className="col-md-6">
+              <p>Follow Us</p>
+            </div>
+            <div className="col-md-6 text-end">
+              <p>Privacy Terms</p>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
-};
+}
 
-export default HomePage;
+export default App;

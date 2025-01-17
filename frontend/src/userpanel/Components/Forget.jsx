@@ -1,6 +1,7 @@
 import "../Assets/css/userstyle.css"; // Optional custom styles
 import logo from "../Assets/image/rnvlogo.png"; // Update the path to your logo
 import forget from "../Assets/image/forget.jpg"; // Update the path to your logo
+import { Link } from "react-router-dom";
 
 const Forget = () => {
   return (
@@ -32,12 +33,12 @@ const Forget = () => {
             </div>
             <br/>
             <button type="submit" className="btn w-100" style={{ backgroundColor: "#00003E", color: "#fff" }}>
-              Send OTP
+            <Link to="/Reset" style={{ color: "#fff", textDecoration: "none", display: "block", width: "100%" }}>Send OTP</Link>
             </button>
           </form>
-          <a href="/Signin" className="mt-3 text-muted" style={{ textDecoration: "none" }}>
-  &larr; Back
-</a>
+          <Link to="/Sign-in" className="mt-3 text-muted" style={{ textDecoration: "none" }}>
+    &larr; Back
+</Link>
 
         </div>
 

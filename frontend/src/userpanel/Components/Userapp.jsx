@@ -8,6 +8,9 @@ import NoticeBoard from "./NoticeBoard ";
 import VehicleInfo from "./VehicleInfo ";
 import Footer from "./Footer";
 import Signin from "./Signin";
+import Forget from "./Forget";
+import Confirm from "./Confirm";
+import Reset from "./Reset";
 
 const Userapp = () => {
   return (
@@ -22,6 +25,9 @@ const Userapp = () => {
           <Route path="/notice-board" element={<NoticeBoard />} />
           <Route path="/vehicle-info" element={<VehicleInfo />} />
           <Route path="/sign-in" element={<Signin />} />
+          <Route path="/forget" element={<Forget />} />
+          <Route path="/confirm" element={<Confirm />} />
+          <Route path="/reset" element={<Reset />} />
         </Routes>
       </div>
       <Footer />

@@ -1,6 +1,7 @@
 import "../Assets/css/userstyle.css"; // Optional custom styles
 import logo from "../Assets/image/rnvlogo.png"; // Update the path to your logo
 import reset from "../Assets/image/reset.jpg"; // Update the path to your logo
+import { Link } from "react-router-dom";
 
 const Reset = () => {
   return (
@@ -43,12 +44,12 @@ const Reset = () => {
               />
             </div>
             <button type="submit" className="btn w-100" style={{ backgroundColor: "#00003E", color: "#fff" }}>
-              Reset Password
+              <Link to="/Confirm" style={{ color: "#fff", textDecoration: "none", display: "block", width: "100%" }}>Reset Password</Link>
             </button>
           </form>
-          <a href="/Signin" className="mt-3 text-muted" style={{ textDecoration: "none" }}>
-  &larr; Back
-</a>
+          <Link to="/Forget" className="mt-3 text-muted" style={{ textDecoration: "none" }}>
+    &larr; Back
+</Link>
 
         </div>
 

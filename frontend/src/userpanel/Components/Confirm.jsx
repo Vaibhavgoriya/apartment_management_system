@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "../Assets/css/userstyle.css"; // Optional custom styles
 import logo from "../Assets/image/rnvlogo.png";
 
@@ -27,19 +28,11 @@ const Confirm = () => {
         <p className="text-muted fs-5 mb-4">
           Click the button below to return to the sign-in page.
         </p>
-        <a
-          href="/signin"
-          className="btn btn-primary w-50"
-          style={{
-            backgroundColor: "#00003E",
-            border: "none",
-            fontSize: "1rem",
-            padding: "10px 20px",
-          }}
-        >
-          Click to Sign In
-        </a>
-      </div>
+        <button type="submit" className="btn w-100" style={{ backgroundColor: "#00003E" }}>
+    <Link to="/sign-in" style={{ color: "#fff", textDecoration: "none", display: "block", width: "100%" }}>
+        <span>Click to Sign In</span>
+    </Link>
+</button>  </div>
 
       {/* Illustration Section */}
       {/* <div className="mt-4">

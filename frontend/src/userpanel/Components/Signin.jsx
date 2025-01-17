@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
 import "../Assets/css/userstyle.css"; // Optional custom styles
 import login from "../Assets/image/login.jpg"; // Optional custom styles
 import logo from "../Assets/image/rnvlogo.png"; // Optional custom styles
+
 
 const Signin = () => {
   return (
@@ -69,13 +71,14 @@ const Signin = () => {
               </label>
             </div>
             <button type="submit" className="btn btn-primary w-100"style={{ backgroundColor: '#00003E' }}>
-              Sign In
-            </button>
+            <Link to="/" style={{ color: "#fff", textDecoration: "none", display: "block", width: "100%" }}>
+        <span> Sign In</span>
+    </Link>            </button>
           </form>
 
           <p className="mt-3 text-muted">
-            Forgot Password? <a href="/forgot-password">Click here</a>
-          </p>
+    Forgot Password? <Link to="/Forget">Click here</Link>
+</p>
         </div>
       </div>
     </div>
