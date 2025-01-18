@@ -6,7 +6,7 @@ const AdminComplaints = () => {
     {
       complaintId: "COM-001",
       apartmentNumber: "101",
-      residentName: "John Doe",
+      residentName: "Radhesh",
       description: "Water leakage in the kitchen",
       status: "Pending",
       createdDate: "2025-01-01",
@@ -15,7 +15,7 @@ const AdminComplaints = () => {
     {
       complaintId: "COM-002",
       apartmentNumber: "102",
-      residentName: "Jane Smith",
+      residentName: "Vaibhav",
       description: "Broken elevator",
       status: "Resolved",
       createdDate: "2025-01-02",

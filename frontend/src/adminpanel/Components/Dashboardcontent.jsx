@@ -6,37 +6,37 @@ const AdminDashboard = () => {
   const members = [
     {
       id: 1,
-      name: "John Doe",
+      name: "Radhesh",
       apartment: "101",
       contact: "123-456-7890",
-      email: "john.doe@example.com",
+      email: "rjoshi123@rku.ac.in",
       wing: "A",
       familyMembersCount: 4,
     },
     {
       id: 2,
-      name: "Jane Smith",
+      name: "Vaibhav",
       apartment: "102",
       contact: "987-654-3210",
-      email: "jane.smith@example.com",
+      email: "vgoriya456@rku.ac.in",
       wing: "B",
       familyMembersCount: 3,
     },
     {
       id: 3,
-      name: "Sam Wilson",
+      name: "Nishant",
       apartment: "103",
       contact: "555-555-5555",
-      email: "sam.wilson@example.com",
+      email: "ntalavita789@rku.ac.in",
       wing: "C",
       familyMembersCount: 2,
     },
     {
       id: 4,
-      name: "Anna Johnson",
+      name: "Jenil",
       apartment: "104",
       contact: "444-444-4444",
-      email: "anna.johnson@example.com",
+      email: "jgajera258@rku.ac.in",
       wing: "D",
       familyMembersCount: 5,
     },
@@ -100,7 +100,7 @@ const AdminDashboard = () => {
               <div className="card-body">
                 <ul className="list-group list-group-flush">
                   {[
-                    "New hall booking request from John Doe",
+                    "New hall booking request from Radhesh",
                     "Maintenance fee paid by Apartment 101",
                     "Feedback received from Resident 302",
                   ].map((activity, index) => (
