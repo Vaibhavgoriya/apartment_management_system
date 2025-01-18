@@ -49,8 +49,12 @@ const AdminNoticeBoardPage = () => {
   };
 
   return (
-    <div className="container mt-4 bg-light">
+    <div className="container-fluid mt-4 py-5 px-5 bg-light">
       <h3 className="fw-bold">Admin - Manage Notices</h3>
+      <p className="text-muted">
+        Manage the notices for your community. Create, edit, and delete notices
+        in real-time.
+      </p>
 
       <div className="d-flex justify-content-between mb-3">
         <button className="btn btn-primary" onClick={handleShow}>
@@ -59,8 +63,8 @@ const AdminNoticeBoardPage = () => {
       </div>
 
       <div className="table-responsive">
-        <table className="table table-bordered">
-          <thead>
+        <table className="table table-bordered table-striped table-hover">
+          <thead className="table-dark">
             <tr>
               <th>Title</th>
               <th>Date</th>

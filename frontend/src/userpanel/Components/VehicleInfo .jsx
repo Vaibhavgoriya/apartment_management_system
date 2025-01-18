@@ -1,108 +1,44 @@
-import { useState } from "react";
 
 const VehicleInfo = () => {
-  const [vehicleData, setVehicleData] = useState({
-    vehicleNumber: "",
-    ownerName: "",
-    model: "",
-    parkingSlot: "",
-  });
-
-  const [message, setMessage] = useState("");
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setVehicleData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    // Validation
-    if (!vehicleData.vehicleNumber || !vehicleData.ownerName || !vehicleData.model || !vehicleData.parkingSlot) {
-      setMessage("Please fill in all fields.");
-      return;
-    }
-
-    // Mock API or save data logic
-    setMessage(
-      `Vehicle added: ${vehicleData.vehicleNumber}, Owner: ${vehicleData.ownerName}, Model: ${vehicleData.model}, Parking Slot: ${vehicleData.parkingSlot}`
-    );
-
-    // Clear form after submission
-    setVehicleData({
-      vehicleNumber: "",
-      ownerName: "",
-      model: "",
-      parkingSlot: "",
-    });
-  };
-
   return (
-    <div style={{ padding: "20px", maxWidth: "600px", margin: "auto", fontFamily: "Arial, sans-serif" }}>
-      <h2>Vehicle Information</h2>
-      <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-        <label>
-          Vehicle Number:
-          <input
-            type="text"
-            name="vehicleNumber"
-            value={vehicleData.vehicleNumber}
-            onChange={handleChange}
-            required
-            style={{ width: "100%", padding: "8px", marginBottom: "10px" }}
-          />
-        </label>
-        <label>
-          Owner Name:
-          <input
-            type="text"
-            name="ownerName"
-            value={vehicleData.ownerName}
-            onChange={handleChange}
-            required
-            style={{ width: "100%", padding: "8px", marginBottom: "10px" }}
-          />
-        </label>
-        <label>
-          Model:
-          <input
-            type="text"
-            name="model"
-            value={vehicleData.model}
-            onChange={handleChange}
-            required
-            style={{ width: "100%", padding: "8px", marginBottom: "10px" }}
-          />
-        </label>
-        <label>
-          Parking Slot:
-          <input
-            type="text"
-            name="parkingSlot"
-            value={vehicleData.parkingSlot}
-            onChange={handleChange}
-            required
-            style={{ width: "100%", padding: "8px", marginBottom: "10px" }}
-          />
-        </label>
-        <button
-          type="submit"
-          style={{
-            backgroundColor: "#4CAF50",
-            color: "white",
-            padding: "10px",
-            border: "none",
-            cursor: "pointer",
-          }}
-        >
-          Add Vehicle
-        </button>
-      </form>
-      {message && <p style={{ marginTop: "20px", color: "green" }}>{message}</p>}
+    <div className="container-fluid bg-light ">
+    
+
+      {/* Vehicle Info Section */}
+      <div className="container my-5">
+        <h2 className="text-center mb-4">Vehicle Info</h2>
+        <div className="row justify-content-center mb-3">
+          <div className="col-md-6">
+            <div className="input-group">
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Search Vehicle Number ..."
+                aria-label="Search Vehicle Number"
+              />
+              <button className="btn btn-dark">Search</button>
+            </div>
+          </div>
+        </div>
+        <table className="table table-striped table-bordered">
+          <thead className="table-dark">
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Apartment</th>
+              <th scope="col">Contact</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Analysis Name</td>
+              <td>A-202</td>
+              <td>9899999999</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+     
     </div>
   );
 };

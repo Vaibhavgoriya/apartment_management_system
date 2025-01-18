@@ -57,10 +57,13 @@ const AdminComplaints = () => {
   });
 
   return (
-    <div className="container mt-5 bg-light p-4">
+    <div className="container-fluid mt-4 py-5 px-5 bg-light p-4">
       <div className="row mb-4">
         <div className="col-md-6">
-          <h2>Complaints Management</h2>
+          <h2 className="fw-bold">Complaints Management</h2>
+          <p className="text-muted">
+            Manage the Complaint and statuses for all apartments.
+          </p>
         </div>
 
         <div className="col-md-6 text-right">
@@ -78,7 +81,7 @@ const AdminComplaints = () => {
 
       {/* Complaints Table */}
       <table className="table table-striped table-bordered table-hover">
-        <thead>
+        <thead className="table-dark">
           <tr>
             <th>Complaint ID</th>
             <th>Apartment Number</th>

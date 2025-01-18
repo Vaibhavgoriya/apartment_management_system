@@ -1,80 +1,88 @@
-import { useState } from "react";
+import { Link } from "react-router-dom";
+import "../Assets/css/userstyle.css"; // Optional custom styles
+import login from "../Assets/image/login.jpg"; // Optional custom styles
+import logo from "../Assets/image/rnvlogo.png"; // Optional custom styles
 
-const SignIn = () => {
-  const [credentials, setCredentials] = useState({
-    email: "",
-    password: "",
-  });
 
-  const [message, setMessage] = useState("");
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setCredentials((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    // Validation
-    if (!credentials.email || !credentials.password) {
-      setMessage("Please enter both email and password.");
-      return;
-    }
-
-    // Mock authentication logic
-    setMessage(`Welcome back, ${credentials.email}!`);
-    setCredentials({
-      email: "",
-      password: "",
-    });
-  };
-
+const Signin = () => {
   return (
-    <div style={{ padding: "20px", maxWidth: "400px", margin: "auto", fontFamily: "Arial, sans-serif" }}>
-      <h2>Sign In</h2>
-      <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-        <label>
-          Email:
-          <input
-            type="email"
-            name="email"
-            value={credentials.email}
-            onChange={handleChange}
-            required
-            style={{ width: "100%", padding: "8px", marginBottom: "10px" }}
+    <div className="signin-container d-flex align-items-center justify-content-center" style={{ minHeight: "100vh" }}>
+      <div className="row w-100">
+        <div className="w-100" style={{ height: "20px", backgroundColor: "#00003E" }}></div>
+        {/* Left Section */}
+        <div className="col-md-6 d-flex flex-column justify-content-center align-items-center bg-light p-5">
+          <img
+            src={login} // Update the path to your image
+            alt="Efficient Living"
+            className="img-fluid"
           />
-        </label>
-        <label>
-          Password:
-          <input
-            type="password"
-            name="password"
-            value={credentials.password}
-            onChange={handleChange}
-            required
-            style={{ width: "100%", padding: "8px", marginBottom: "10px" }}
-          />
-        </label>
-        <button
-          type="submit"
-          style={{
-            backgroundColor: "#4CAF50",
-            color: "white",
-            padding: "10px",
-            border: "none",
-            cursor: "pointer",
-          }}
-        >
-          Sign In
-        </button>
-      </form>
-      {message && <p style={{ marginTop: "20px", color: "green" }}>{message}</p>}
+          <h2 className="mt-4 text-center">Efficient Living Starts Here</h2>
+          <p className="text-center">
+            Our platform is built to meet the needs of apartment communities with intuitive, practical, and accessible features.
+          </p>
+        </div>
+
+        {/* Right Section */}
+        <div className="col-md-6 d-flex flex-column justify-content-center align-items-center bg-white p-5" style={{ paddingTop: "20px" }}>
+          <div className="text-center mb-4">
+          <img
+              src={logo} // Update the path to your logo
+              //alt="RNV Estate"
+              className="img-fluid mb-2"
+              style={{ width: "250px" }}
+            />
+            <h3>Sign In</h3>
+            <p className="text-muted">Sign in with your details to continue</p>
+          </div>
+
+          <form className="w-100" style={{ maxWidth: "400px" }}>
+            <div className="mb-3">
+              <label htmlFor="email" className="form-label">
+                Email
+              </label>
+              <input
+                type="email"
+                className="form-control"
+                id="email"
+                placeholder="Enter your email"
+                required
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="password" className="form-label">
+                Password
+              </label>
+              <input
+                type="password"
+                className="form-control"
+                id="password"
+                placeholder="Enter your password"
+                required
+              />
+            </div>
+            <div className="mb-3 form-check">
+              <input
+                type="checkbox"
+                className="form-check-input"
+                id="rememberMe"
+              />
+              <label className="form-check-label" htmlFor="rememberMe">
+                Remember me
+              </label>
+            </div>
+            <button type="submit" className="btn btn-primary w-100"style={{ backgroundColor: '#00003E' }}>
+            <Link to="/" style={{ color: "#fff", textDecoration: "none", display: "block", width: "100%" }}>
+        <span> Sign In</span>
+    </Link>            </button>
+          </form>
+
+          <p className="mt-3 text-muted">
+    Forgot Password? <Link to="/Forget">Click here</Link>
+</p>
+        </div>
+      </div>
     </div>
   );
 };
 
-export default SignIn;
+export default Signin;

@@ -26,11 +26,11 @@ const AdminMaintenancePage = () => {
   };
 
   return (
-    <main className="content px-3 py-4 bg-light">
+    <main className="content mt-4 py-5 px-5 bg-light">
       <div className="container-fluid">
         {/* Header Section */}
         <div className="mb-4">
-          <h3 className="fw-bold fs-4 mb-2">Admin Maintenance Page</h3>
+          <h2 className="fw-bold mb-2">Admin Maintenance Page</h2>
           <p className="text-muted">
             Manage the maintenance fees and payment statuses for all apartments.
           </p>
@@ -51,8 +51,8 @@ const AdminMaintenancePage = () => {
                 />
               </div>
               <div className="card-body">
-                <table className="table table-striped table-hover">
-                  <thead>
+                <table className="table table-striped table-hover table-bordered">
+                  <thead className="table-dark">
                     <tr>
                       <th>Apartment</th>
                       <th>Status</th>
