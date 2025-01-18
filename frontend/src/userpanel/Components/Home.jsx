@@ -35,40 +35,7 @@ function App() {
           )}
         </div>
       </div>
-      <footer className="bg-dark text-light py-3 mt-4">
-        {" "}
-        {/* Footer with dark background, light text, padding */}
-        <div className="container">
-          <div className="row">
-            <div className="col-md-4">
-              <p>Copyright © 2023 RNV</p>
-              <p>Designed by RNV</p>
-            </div>
-            <div className="col-md-4 text-center">
-              <h5>About Us</h5>
-              <p>
-                To bridge the gap between residents and management through
-                intuitive technology, ensuring better communication,
-                transparency, and convenience for all.
-              </p>
-            </div>
-            <div className="col-md-4 text-end">
-              <h5>Contact Info</h5>
-              <p>Umiya Chowck, Rajkot, Gujarat</p>
-              <p>+91 7984767882</p>
-              <p>mw123@gmail.com</p>
-            </div>
-          </div>
-          <div className="row mt-2">
-            <div className="col-md-6">
-              <p>Follow Us</p>
-            </div>
-            <div className="col-md-6 text-end">
-              <p>Privacy Terms</p>
-            </div>
-          </div>
-        </div>
-      </footer>
+      
     </div>
   );
 }
