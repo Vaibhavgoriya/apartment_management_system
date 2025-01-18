@@ -5,28 +5,28 @@ const AdminHallBookingPage = () => {
   const [bookingRequests, setBookingRequests] = useState([
     {
       id: 1,
-      user: "John Doe",
+      user: "Nishant",
       hall: "Hall A",
       date: "2025-01-15",
       status: "Pending",
     },
     {
       id: 2,
-      user: "Jane Smith",
+      user: "Radhesh",
       hall: "Hall B",
       date: "2025-01-16",
       status: "Pending",
     },
     {
       id: 3,
-      user: "Mike Johnson",
+      user: "Vaibhav",
       hall: "Hall C",
       date: "2025-01-17",
       status: "Pending",
     },
     {
       id: 4,
-      user: "Mike Tycon",
+      user: "Nenish",
       hall: "Hall D",
       date: "2025-02-17",
       status: "Rejected",

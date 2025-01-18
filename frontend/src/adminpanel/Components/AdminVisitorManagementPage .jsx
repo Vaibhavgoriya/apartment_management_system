@@ -4,16 +4,16 @@ const AdminVisitorManagementPage = () => {
   const [pendingApprovals, setPendingApprovals] = useState([
     {
       id: 1,
-      visitor: "John Doe",
-      resident: "Alice Smith",
+      visitor: "Radhesh",
+      resident: "Vaibhav",
       purpose: "Delivery",
       visitDate: "2025-01-15",
       status: "Pending",
     },
     {
       id: 2,
-      visitor: "Jane Brown",
-      resident: "Bob Johnson",
+      visitor: "Nishant",
+      resident: "Jay",
       purpose: "Guest",
       visitDate: "2025-01-16",
       status: "Pending",
@@ -23,8 +23,8 @@ const AdminVisitorManagementPage = () => {
   const [visitorLog, setVisitorLog] = useState([
     {
       id: 3,
-      visitor: "Mike Johnson",
-      resident: "Charlie Green",
+      visitor: "Jenil",
+      resident: "Krupansu",
       purpose: "Maintenance",
       checkIn: "10:00 AM",
       checkOut: "1:00 PM",
@@ -32,8 +32,8 @@ const AdminVisitorManagementPage = () => {
     },
     {
       id: 4,
-      visitor: "Lucy Adams",
-      resident: "Diana White",
+      visitor: "Nenish",
+      resident: "VG",
       purpose: "Guest",
       checkIn: "11:00 AM",
       checkOut: null,
