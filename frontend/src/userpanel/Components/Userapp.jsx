@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./navbar";
 import Home from "./Home";
-import Maintenance from "./Maintenance ";
-import Complain from "./Complain ";
-import Booking from "./Booking ";
-import NoticeBoard from "./NoticeBoard ";
-import VehicleInfo from "./VehicleInfo ";
+import Maintenance from "./Maintenance";
+import Complain from "./Complain";
+import Booking from "./Booking";
+import NoticeBoard from "./NoticeBoard";
+import VehicleInfo from "./VehicleInfo";
 import Footer from "./Footer";
 import Signin from "./Signin";
 import Forget from "./Forget";

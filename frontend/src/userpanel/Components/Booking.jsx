@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
-function App() {
+function Booking() {
   const [formData, setFormData] = useState({
     date: "",
-    title: "",
-    description: "",
+    startTime: "",
+    endTime: "",
+    purpose: "",
   });
 
   const [bookings, setBookings] = useState([
@@ -38,31 +39,54 @@ function App() {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log("Form submitted:", formData);
-    setFormData({ date: "", title: "", description: "" });
+
+    // Add new booking to the list
+    const newBooking = {
+      id: bookings.length + 1,
+      date: formData.date,
+      startTime: formData.startTime,
+      endTime: formData.endTime,
+      purpose: formData.purpose,
+    };
+    setBookings([...bookings, newBooking]);
+
+    // Clear form fields
+    setFormData({ date: "", startTime: "", endTime: "", purpose: "" });
   };
 
   return (
     <div className="container-fluid bg-light">
       <div className="container my-5">
         <div className="row">
-        <div className="col-md-3">
-      <div className="d-grid gap-2 navigation-buttons"> {/* Added className */}
-        <a href="#" className="btn btn-primary rounded-3 py-2 d-flex justify-content-between align-items-center"style={{ backgroundColor: '#00003E' }}>
-          <span>Booking Form</span>
-          <span>&gt;</span>
-        </a>
-        <a href="#" className="btn btn-light border rounded-3 py-2 d-flex justify-content-between align-items-center">
-          <span>Booking List</span>
-          <span>&gt;</span>
-        </a>
-      </div>
-    </div>
+          {/* Navigation Buttons */}
+          <div className="col-md-3">
+            <div className="d-grid gap-2 navigation-buttons">
+              <a
+                href="#"
+                className="btn btn-primary rounded-3 py-2 d-flex justify-content-between align-items-center"
+                style={{ backgroundColor: "#00003E" }}
+              >
+                <span>Booking Form</span>
+                <span>&gt;</span>
+              </a>
+              <a
+                href="#"
+                className="btn btn-light border rounded-3 py-2 d-flex justify-content-between align-items-center"
+              >
+                <span>Booking List</span>
+                <span>&gt;</span>
+              </a>
+            </div>
+          </div>
+
+          {/* Booking Form */}
           <div className="col-md-9">
-            <h2 className="mb-4"style={{ color: "#00003E" }}>Hall Booking Form</h2>
+            <h2 className="mb-4" style={{ color: "#00003E" }}>
+              Hall Booking Form
+            </h2>
             <form onSubmit={handleSubmit}>
               <div className="mb-3">
                 <label htmlFor="date" className="form-label">
-                  {" "}
                   Date
                 </label>
                 <input
@@ -76,57 +100,61 @@ function App() {
                 />
               </div>
               <div className="mb-3">
-                <label htmlFor="time" className="form-label">
+                <label htmlFor="startTime" className="form-label">
                   Start Time
                 </label>
                 <input
                   type="time"
-                  id="time"
-                  name="time"
+                  id="startTime"
+                  name="startTime"
                   className="form-control"
-                  placeholder="start time"
-                  value={formData.title}
+                  value={formData.startTime}
                   onChange={handleChange}
                   required
                 />
               </div>
               <div className="mb-3">
-                <label htmlFor="time" className="form-label">
+                <label htmlFor="endTime" className="form-label">
                   End Time
                 </label>
                 <input
                   type="time"
-                  id="time"
-                  name="time"
+                  id="endTime"
+                  name="endTime"
                   className="form-control"
-                  placeholder="end time"
-                  value={formData.title}
+                  value={formData.endTime}
                   onChange={handleChange}
                   required
                 />
               </div>
-
               <div className="mb-3">
-                <label htmlFor="description" className="form-label">
+                <label htmlFor="purpose" className="form-label">
                   Purpose
                 </label>
                 <textarea
-                  id="description"
-                  name="description"
+                  id="purpose"
+                  name="purpose"
                   className="form-control"
-                  placeholder="Type Description Here"
+                  placeholder="Enter purpose here"
                   rows="4"
-                  value={formData.description}
+                  value={formData.purpose}
                   onChange={handleChange}
                   required
                 ></textarea>
               </div>
-              <button type="submit" className="btn btn-dark"style={{ backgroundColor: '#00003E' }}>
+              <button
+                type="submit"
+                className="btn btn-dark"
+                style={{ backgroundColor: "#00003E" }}
+              >
                 Submit
               </button>
             </form>
 
-            <h2 className="mt-4"style={{ color: "#00003E" }}>Past Bookings</h2>
+            {/* Past Bookings */}
+            <h2 className="mt-4" style={{ color: "#00003E" }}>
+              Past Bookings
+            </h2>
             <table className="table table-bordered">
               <thead>
                 <tr>
@@ -156,4 +184,4 @@ function App() {
   );
 }
 
-export default App;
+export default Booking;

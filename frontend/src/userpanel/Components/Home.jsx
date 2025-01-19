@@ -1,6 +1,5 @@
-import React from "react";
 
-function App() {
+function Home() {
   return (
     <div className="container-fluid bg-light">
       {" "}
@@ -40,4 +39,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;

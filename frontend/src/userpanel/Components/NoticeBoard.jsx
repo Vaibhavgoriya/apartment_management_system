@@ -1,24 +1,25 @@
-import React from 'react';
-
 const NoticeBoard = () => {
   const notices = [
     {
-      date: 'Nov 8th, 2023',
-      title: 'Meeting',
-      description: 'Navratri celebration',
-      link: '#'
-    }
+      date: "Nov 8th, 2023",
+      title: "Meeting",
+      description: "Navratri celebration",
+      link: "#",
+    },
   ];
 
   return (
     <div className="container-fluid bg-light">
-     
       {/* Notice Section */}
       <div className="container my-5">
-        <h1 className="text mb-4"style={{ color: "#00003E" }}>Notice</h1>
+        <h1 className="text mb-4" style={{ color: "#00003E" }}>
+          Notice
+        </h1>
         <div className="card shadow-sm">
           <div className="card-body">
-            <h5 className="card-title"style={{ color: "#00003E" }}>View Notice</h5>
+            <h5 className="card-title" style={{ color: "#00003E" }}>
+              View Notice
+            </h5>
             <div className="table-responsive mt-3">
               <table className="table table-bordered table-striped">
                 <thead className="table-dark">
@@ -36,7 +37,10 @@ const NoticeBoard = () => {
                       <td>{notice.title}</td>
                       <td>{notice.description}</td>
                       <td>
-                        <a href={notice.link} className="btn btn-primary btn-sm">
+                        <a
+                          href={notice.link}
+                          className="btn btn-primary btn-sm"
+                        >
                           Know More
                         </a>
                       </td>
