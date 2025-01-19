@@ -1,12 +1,33 @@
+import { useState } from "react";
+
 const NoticeBoard = () => {
+  const [showModal, setShowModal] = useState(false);
+  const [selectedNotice, setSelectedNotice] = useState(null);
+
   const notices = [
     {
       date: "Nov 8th, 2023",
       title: "Meeting",
-      description: "Navratri celebration",
+      description: "Navratri celebration will be held in the community hall. All residents are invited to join the event.",
+      link: "#",
+    },
+    {
+      date: "Dec 1st, 2023",
+      title: "Maintenance Notice",
+      description: "Scheduled power maintenance on Dec 5th, 2023, from 10 AM to 2 PM.",
       link: "#",
     },
   ];
+
+  const handleShow = (notice) => {
+    setSelectedNotice(notice);
+    setShowModal(true);
+  };
+
+  const handleClose = () => {
+    setShowModal(false);
+    setSelectedNotice(null);
+  };
 
   return (
     <div className="container-fluid bg-light">
@@ -35,14 +56,14 @@ const NoticeBoard = () => {
                     <tr key={index}>
                       <td>{notice.date}</td>
                       <td>{notice.title}</td>
-                      <td>{notice.description}</td>
+                      <td>{notice.description.substring(0, 30)}...</td>
                       <td>
-                        <a
-                          href={notice.link}
+                        <button
                           className="btn btn-primary btn-sm"
+                          onClick={() => handleShow(notice)}
                         >
                           Know More
-                        </a>
+                        </button>
                       </td>
                     </tr>
                   ))}
@@ -52,6 +73,29 @@ const NoticeBoard = () => {
           </div>
         </div>
       </div>
+
+      {/* Bootstrap Modal */}
+      {showModal && selectedNotice && (
+        <div className="modal fade show d-block" tabIndex="-1" style={{ backgroundColor: "rgba(0,0,0,0.5)" }}>
+          <div className="modal-dialog">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title">{selectedNotice.title}</h5>
+                <button type="button" className="btn-close" onClick={handleClose}></button>
+              </div>
+              <div className="modal-body">
+                <p><strong>Date:</strong> {selectedNotice.date}</p>
+                <p><strong>Description:</strong> {selectedNotice.description}</p>
+              </div>
+              <div className="modal-footer">
+                <button className="btn btn-secondary" onClick={handleClose}>
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
