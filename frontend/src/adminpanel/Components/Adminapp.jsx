@@ -15,6 +15,7 @@ import AdminNoticeBoardPage from "./AdminNoticeBoardPage ";
 import AdminVisitorManagementPage from "./AdminVisitorManagementPage ";
 import AdminVehicleInfoPage from "./AdminVehicleInfoPage ";
 import Home from "./Home";
+import AdminAddMembers from "./AdminAddMembers";
 
 const Adminapp = () => {
   const [isSidebarExpanded, setIsSidebarExpanded] = useState(false);
@@ -35,6 +36,7 @@ const Adminapp = () => {
           <main className="content px-3 py-4">
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/adminAddMembers" element={<AdminAddMembers />} />
               <Route path="/profile" element={<Profile />} />
               <Route
                 path="/adminMaintenancePage"

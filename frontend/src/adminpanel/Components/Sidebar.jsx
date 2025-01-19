@@ -35,6 +35,19 @@ const Sidebar = () => {
         </li>
         <li className="sidebar-item">
           <NavLink
+            to="/AdminAddMembers"
+            className={({ isActive }) =>
+              `sidebar-link d-flex align-items-center ${
+                isActive ? "active" : ""
+              }`
+            }
+          >
+            <i className="bi bi-person-plus me-2"></i> {/* User Plus icon */}
+            <span className="sidebar-text">Admin Add Members</span>
+          </NavLink>
+        </li>
+        <li className="sidebar-item">
+          <NavLink
             to="/adminMaintenancePage"
             className={({ isActive }) =>
               `sidebar-link ${isActive ? "active" : ""}`
@@ -106,7 +119,7 @@ const Sidebar = () => {
             <span>Vehicle Info</span>
           </NavLink>
         </li>
-        <li className="sidebar-item">
+        {/* <li className="sidebar-item">
           <a
             href="#auth"
             className="sidebar-link has-dropdown"
@@ -115,7 +128,6 @@ const Sidebar = () => {
             aria-controls="auth"
           >
             <i className="bi bi-shield-lock"></i>{" "}
-            {/* Lock icon for Authentication */}
             <span>Authentication</span>
           </a>
           <ul id="auth" className="sidebar-dropdown list-unstyled collapse">
@@ -126,7 +138,7 @@ const Sidebar = () => {
                   `sidebar-link ${isActive ? "active" : ""}`
                 }
               >
-                <i className="bi bi-box-arrow-in-right"></i> {/* Login icon */}
+                <i className="bi bi-box-arrow-in-right"></i>
                 Login
               </NavLink>
             </li>
@@ -137,7 +149,7 @@ const Sidebar = () => {
                   `sidebar-link ${isActive ? "active" : ""}`
                 }
               >
-                <i className="bi bi-person-plus"></i> {/* Register icon */}
+                <i className="bi bi-person-plus"></i> 
                 Register
               </NavLink>
             </li>
@@ -150,7 +162,7 @@ const Sidebar = () => {
               `sidebar-link ${isActive ? "active" : ""}`
             }
           >
-            <i className="bi bi-bell-fill"></i> {/* Notification icon */}
+            <i className="bi bi-bell-fill"></i>
             <span>Notifications</span>
           </NavLink>
         </li>
@@ -161,10 +173,10 @@ const Sidebar = () => {
               `sidebar-link ${isActive ? "active" : ""}`
             }
           >
-            <i className="bi bi-gear"></i> {/* Settings icon */}
+            <i className="bi bi-gear"></i>
             <span>Settings</span>
           </NavLink>
-        </li>
+        </li> */}
       </ul>
       <div className="sidebar-footer">
         <NavLink

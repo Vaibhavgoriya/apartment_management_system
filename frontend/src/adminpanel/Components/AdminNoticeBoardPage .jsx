@@ -2,13 +2,26 @@ import { useState } from "react";
 
 const AdminNoticeBoardPage = () => {
   const [notices, setNotices] = useState([
-    { id: 1, title: "Notice 1", date: "2025-01-15", status: "Active" },
-    { id: 2, title: "Notice 2", date: "2025-01-16", status: "Active" },
+    {
+      id: 1,
+      title: "Notice 1",
+      description: "This is a description for Notice 1",
+      date: "2025-01-15",
+      status: "Active",
+    },
+    {
+      id: 2,
+      title: "Notice 2",
+      description: "This is a description for Notice 2",
+      date: "2025-01-16",
+      status: "Active",
+    },
   ]);
   const [showModal, setShowModal] = useState(false);
   const [editNotice, setEditNotice] = useState(null);
   const [newNotice, setNewNotice] = useState({
     title: "",
+    description: "",
     date: "",
     status: "Active",
   });
@@ -29,6 +42,7 @@ const AdminNoticeBoardPage = () => {
     setEditNotice(notice);
     setNewNotice({
       title: notice.title,
+      description: notice.description,
       date: notice.date,
       status: notice.status,
     });
@@ -67,6 +81,7 @@ const AdminNoticeBoardPage = () => {
           <thead className="table-dark">
             <tr>
               <th>Title</th>
+              <th>Description</th>
               <th>Date</th>
               <th>Status</th>
               <th>Actions</th>
@@ -76,6 +91,7 @@ const AdminNoticeBoardPage = () => {
             {notices.map((notice) => (
               <tr key={notice.id}>
                 <td>{notice.title}</td>
+                <td>{notice.description}</td>
                 <td>{notice.date}</td>
                 <td>{notice.status}</td>
                 <td>
@@ -127,6 +143,20 @@ const AdminNoticeBoardPage = () => {
                       setNewNotice({ ...newNotice, title: e.target.value })
                     }
                     placeholder="Enter notice title"
+                  />
+                </div>
+                <div className="mb-3">
+                  <label className="form-label">Description</label>
+                  <textarea
+                    className="form-control"
+                    value={newNotice.description}
+                    onChange={(e) =>
+                      setNewNotice({
+                        ...newNotice,
+                        description: e.target.value,
+                      })
+                    }
+                    placeholder="Enter notice description"
                   />
                 </div>
                 <div className="mb-3">

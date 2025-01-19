@@ -125,7 +125,11 @@ const AdminVehicleInfoPage = () => {
   return (
     <div className="container mt-4 py-5 px-5 bg-light">
       <div className="d-flex justify-content-between align-items-center mb-4">
-        <h1 className="h3">Vehicle Information Management</h1>
+        {/* Header Section */}
+        <div className="mb-4">
+          <h2 className="fw-bold mb-2">Vechile Info Management</h2>
+          <p className="text-muted">Manage Vechile Info of Apartment.</p>
+        </div>
         <div className="d-flex gap-2">
           <button
             className="btn btn-primary"
