@@ -2,20 +2,19 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Navigate,
 } from "react-router-dom";
 import { useState } from "react";
 import Sidebar from "./Sidebar";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import Profile from "./Profile";
-import Dashboardcontent from "./Dashboardcontent";
 import AdminMaintenancePage from "./AdminMaintenancePage ";
 import AdminComplaints from "./AdminComplaints ";
 import AdminHallBookingPage from "./AdminHallBookingPage ";
 import AdminNoticeBoardPage from "./AdminNoticeBoardPage ";
 import AdminVisitorManagementPage from "./AdminVisitorManagementPage ";
 import AdminVehicleInfoPage from "./AdminVehicleInfoPage ";
+import Home from "./Home";
 
 const Adminapp = () => {
   const [isSidebarExpanded, setIsSidebarExpanded] = useState(false);
@@ -35,9 +34,7 @@ const Adminapp = () => {
           <Navbar />
           <main className="content px-3 py-4">
             <Routes>
-              {/* Default route to redirect to Dashboardcontent */}
-              <Route path="/" element={<Navigate to="/dashboardcontent" />} />
-              <Route path="/dashboardcontent" element={<Dashboardcontent />} />
+              <Route path="/" element={<Home />} />
               <Route path="/profile" element={<Profile />} />
               <Route
                 path="/adminMaintenancePage"
