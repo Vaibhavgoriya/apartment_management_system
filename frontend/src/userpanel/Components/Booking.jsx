@@ -6,6 +6,7 @@ function Booking() {
     startTime: "",
     endTime: "",
     purpose: "",
+    hallType: "Hall A", // Default hall type
   });
 
   const [bookings, setBookings] = useState([
@@ -15,6 +16,7 @@ function Booking() {
       startTime: "10:00",
       endTime: "12:00",
       purpose: "Birthday Party",
+      hallType: "Hall A",
     },
     {
       id: 2,
@@ -22,6 +24,7 @@ function Booking() {
       startTime: "14:00",
       endTime: "16:00",
       purpose: "Meeting",
+      hallType: "Hall B",
     },
     {
       id: 3,
@@ -29,6 +32,7 @@ function Booking() {
       startTime: "18:00",
       endTime: "20:00",
       purpose: "Event",
+      hallType: "Hall C",
     },
   ]);
 
@@ -47,11 +51,12 @@ function Booking() {
       startTime: formData.startTime,
       endTime: formData.endTime,
       purpose: formData.purpose,
+      hallType: formData.hallType,
     };
     setBookings([...bookings, newBooking]);
 
     // Clear form fields
-    setFormData({ date: "", startTime: "", endTime: "", purpose: "" });
+    setFormData({ date: "", startTime: "", endTime: "", purpose: "", hallType: "Hall A" });
   };
 
   return (
@@ -61,21 +66,19 @@ function Booking() {
           {/* Navigation Buttons */}
           <div className="col-md-3">
             <div className="d-grid gap-2 navigation-buttons">
-              <a
-                href="#"
+              <button
                 className="btn btn-primary rounded-3 py-2 d-flex justify-content-between align-items-center"
                 style={{ backgroundColor: "#00003E" }}
               >
                 <span>Booking Form</span>
                 <span>&gt;</span>
-              </a>
-              <a
-                href="#"
+              </button>
+              <button
                 className="btn btn-light border rounded-3 py-2 d-flex justify-content-between align-items-center"
               >
                 <span>Booking List</span>
                 <span>&gt;</span>
-              </a>
+              </button>
             </div>
           </div>
 
@@ -142,6 +145,23 @@ function Booking() {
                   required
                 ></textarea>
               </div>
+              <div className="mb-3">
+                <label htmlFor="hallType" className="form-label">
+                  Hall Type
+                </label>
+                <select
+                  id="hallType"
+                  name="hallType"
+                  className="form-control"
+                  value={formData.hallType}
+                  onChange={handleChange}
+                  required
+                >
+                  <option value="Hall A">Hall A (Capacity: 50)</option>
+                  <option value="Hall B">Hall B (Capacity: 100)</option>
+                  <option value="Hall C">Hall C (Capacity: 150)</option>
+                </select>
+              </div>
               <button
                 type="submit"
                 className="btn btn-dark"
@@ -163,6 +183,7 @@ function Booking() {
                   <th>Starting Time</th>
                   <th>Ending Time</th>
                   <th>Purpose</th>
+                  <th>Hall Type</th>
                 </tr>
               </thead>
               <tbody>
@@ -173,6 +194,7 @@ function Booking() {
                     <td>{booking.startTime}</td>
                     <td>{booking.endTime}</td>
                     <td>{booking.purpose}</td>
+                    <td>{booking.hallType}</td>
                   </tr>
                 ))}
               </tbody>
