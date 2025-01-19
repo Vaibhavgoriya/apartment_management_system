@@ -15,7 +15,7 @@ const Sidebar = () => {
           <i className="bi bi-grid"></i> {/* Sidebar toggle icon */}
         </button>
         <div className="sidebar-logo">
-          <NavLink to="/dashboardcontent" className="navbar-brand fs-2">
+          <NavLink to="/" className="navbar-brand fs-2">
             RNV
           </NavLink>{" "}
           {/* Branding for Sidebar */}
@@ -24,7 +24,7 @@ const Sidebar = () => {
       <ul className="sidebar-nav">
         <li className="sidebar-item">
           <NavLink
-            to="/dashboardcontent"
+            to="/"
             className={({ isActive }) =>
               `sidebar-link ${isActive ? "active" : ""}`
             }

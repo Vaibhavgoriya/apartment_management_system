@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const AdminDashboard = () => {
+const Home = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const members = [
@@ -42,7 +42,6 @@ const AdminDashboard = () => {
     },
   ];
 
-
   const filteredMembers = members.filter(
     (member) =>
       member.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -50,7 +49,6 @@ const AdminDashboard = () => {
       member.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
       member.contact.includes(searchTerm)
   );
-
 
   return (
     <main className="content px-3 py-4 bg-light">
@@ -219,4 +217,4 @@ const AdminDashboard = () => {
   );
 };
 
-export default AdminDashboard;
+export default Home;
