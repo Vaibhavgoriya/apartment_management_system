@@ -4,7 +4,7 @@ const Maintenance = () => {
              <h2 className="fw-bold mt-5">Pending Maintenance</h2>
 
       {/* Main Content */}
-      <div className="container my-5">
+      <div className="container my-5 px-5 ty-5 mt-4">
         <div className="table-responsive">
           <table className="table table-bordered table-striped">
             <thead className="table-secondary">
