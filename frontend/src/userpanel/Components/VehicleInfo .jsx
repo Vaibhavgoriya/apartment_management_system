@@ -2,12 +2,9 @@
 const VehicleInfo = () => {
   return (
     <div className="container-fluid bg-light ">
-    
-
-      {/* Vehicle Info Section */}
-      <div className="container my-5">
-        <h2 className="text-center mb-4">Vehicle Info</h2>
-        <div className="row justify-content-center mb-3">
+          <div className="container my-5">
+      <h2 className="text-center mb-4 row justify-content-left" style={{ color: "#00003E" }}>Vehicle Info</h2>
+      <div className="row justify-content-left mb-3">
           <div className="col-md-6">
             <div className="input-group">
               <input
@@ -16,10 +13,11 @@ const VehicleInfo = () => {
                 placeholder="Search Vehicle Number ..."
                 aria-label="Search Vehicle Number"
               />
-              <button className="btn btn-dark">Search</button>
+              <button className="btn btn-dark"style={{ backgroundColor: '#00003E' }}>Search</button>
             </div>
           </div>
         </div>
+        <br/>
         <table className="table table-striped table-bordered">
           <thead className="table-dark">
             <tr>

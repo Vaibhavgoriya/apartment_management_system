@@ -1,10 +1,10 @@
-import  { useState } from 'react';
+import { useState } from "react";
 
 const ComplaintForm = () => {
   const [formData, setFormData] = useState({
-    date: '',
-    title: '',
-    description: ''
+    date: "",
+    title: "",
+    description: "",
   });
 
   const handleChange = (e) => {
@@ -13,33 +13,44 @@ const ComplaintForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Complaint Submitted:', formData);
-    alert('Complaint submitted successfully!');
-    setFormData({ date: '', title: '', description: '' }); // Reset form
+    console.log("Complaint Submitted:", formData);
+    alert("Complaint submitted successfully!");
+    setFormData({ date: "", title: "", description: "" }); // Reset form
   };
 
   return (
     <div className="container-fluid bg-light min-vh-100">
-            <div className="container my-5">
+      <div className="container my-5">
         <div className="row">
-          {/* Sidebar */}
+          {/* Sidebar Navigation */}
           <div className="col-md-3">
-            <ul className="list-group">
-              <li className="list-group-item list-group-item-dark active text-center">
-                <strong>Complain</strong>
-              </li>
-              <li className="list-group-item text-center">
-                <a href="/complain-list" className="text-decoration-none text-dark">Complain List</a>
-              </li>
-            </ul>
+            <div className="d-grid gap-2 navigation-buttons">
+              <a
+                href="#"
+                className="btn btn-primary rounded-3 py-2 d-flex justify-content-between align-items-center"
+                style={{ backgroundColor: "#00003E" }}
+              >
+                <span>Complain</span>
+                <span>&gt;</span>
+              </a>
+              <a
+                href="#"
+                className="btn btn-light border rounded-3 py-2 d-flex justify-content-between align-items-center"
+              >
+                <span>Complain List</span>
+                <span>&gt;</span>
+              </a>
+            </div>
           </div>
 
           {/* Main Content */}
           <div className="col-md-9">
-            <h2 className="mb-4">Complain Form</h2>
+            <h2 className="mb-4"style={{ color: "#00003E" }}>Complaint Form</h2>
             <form onSubmit={handleSubmit}>
               <div className="mb-3">
-                <label htmlFor="date" className="form-label">Complain Date</label>
+                <label htmlFor="date" className="form-label">
+                  Complaint Date
+                </label>
                 <input
                   type="date"
                   id="date"
@@ -51,20 +62,24 @@ const ComplaintForm = () => {
                 />
               </div>
               <div className="mb-3">
-                <label htmlFor="title" className="form-label">Complain Title</label>
+                <label htmlFor="title" className="form-label">
+                  Complaint Title
+                </label>
                 <input
                   type="text"
                   id="title"
                   name="title"
                   className="form-control"
-                  placeholder="Type Complain Here"
+                  placeholder="Type Complaint Here"
                   value={formData.title}
                   onChange={handleChange}
                   required
                 />
               </div>
               <div className="mb-3">
-                <label htmlFor="description" className="form-label">Description</label>
+                <label htmlFor="description" className="form-label">
+                  Description
+                </label>
                 <textarea
                   id="description"
                   name="description"
@@ -76,13 +91,17 @@ const ComplaintForm = () => {
                   required
                 ></textarea>
               </div>
-              <button type="submit" className="btn btn-dark">Submit</button>
+              <button
+                type="submit"
+                className="btn btn-dark"
+                style={{ backgroundColor: "#00003E" }} >
+                Submit
+              </button>
             </form>
           </div>
         </div>
       </div>
-
-      </div>
+    </div>
   );
 };
 

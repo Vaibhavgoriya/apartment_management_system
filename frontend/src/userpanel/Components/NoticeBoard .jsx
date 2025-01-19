@@ -11,14 +11,14 @@ const NoticeBoard = () => {
   ];
 
   return (
-    <div className="container-fluid bg-light min-vh-100">
+    <div className="container-fluid bg-light">
      
       {/* Notice Section */}
       <div className="container my-5">
-        <h1 className="text-dark mb-4">Notice</h1>
+        <h1 className="text mb-4"style={{ color: "#00003E" }}>Notice</h1>
         <div className="card shadow-sm">
           <div className="card-body">
-            <h5 className="card-title">View Notice</h5>
+            <h5 className="card-title"style={{ color: "#00003E" }}>View Notice</h5>
             <div className="table-responsive mt-3">
               <table className="table table-bordered table-striped">
                 <thead className="table-dark">

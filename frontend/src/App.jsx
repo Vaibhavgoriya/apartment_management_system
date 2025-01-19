@@ -1,3 +1,4 @@
+import Adminapp from "./adminpanel/Components/Adminapp";
 import Userapp from "./userpanel/Components/Userapp";
 
 function App() {
@@ -30,15 +31,15 @@ export default App;
 
 
 
-import Adminapp from "./adminpanel/Components/Adminapp";
+// import Adminapp from "./adminpanel/Components/Adminapp";
 
-function App() {
-  return (
-    <>
-      <Adminapp />
-    </>
+// function App() {
+//   return (
+//     <>
+//       <Adminapp />
+//     </>
     
-  );
-}
+//   );
+// }
 
-export default App;
+// export default App;

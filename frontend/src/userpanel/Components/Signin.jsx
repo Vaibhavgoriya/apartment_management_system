@@ -3,12 +3,17 @@ import "../Assets/css/userstyle.css"; // Optional custom styles
 import login from "../Assets/image/login.jpg"; // Optional custom styles
 import logo from "../Assets/image/rnvlogo.png"; // Optional custom styles
 
-
 const Signin = () => {
   return (
-    <div className="signin-container d-flex align-items-center justify-content-center" style={{ minHeight: "100vh" }}>
+    <div
+      className="signin-container d-flex align-items-center justify-content-center"
+      style={{ minHeight: "100vh" }}
+    >
       <div className="row w-100">
-        <div className="w-100" style={{ height: "20px", backgroundColor: "#00003E" }}></div>
+        <div
+          className="w-100"
+          style={{ height: "20px", backgroundColor: "#00003E" }}
+        ></div>
         {/* Left Section */}
         <div className="col-md-6 d-flex flex-column justify-content-center align-items-center bg-light p-5">
           <img
@@ -18,14 +23,18 @@ const Signin = () => {
           />
           <h2 className="mt-4 text-center">Efficient Living Starts Here</h2>
           <p className="text-center">
-            Our platform is built to meet the needs of apartment communities with intuitive, practical, and accessible features.
+            Our platform is built to meet the needs of apartment communities
+            with intuitive, practical, and accessible features.
           </p>
         </div>
 
         {/* Right Section */}
-        <div className="col-md-6 d-flex flex-column justify-content-center align-items-center bg-white p-5" style={{ paddingTop: "20px" }}>
+        <div
+          className="col-md-6 d-flex flex-column justify-content-center align-items-center bg-white p-5"
+          style={{ paddingTop: "20px" }}
+        >
           <div className="text-center mb-4">
-          <img
+            <img
               src={logo} // Update the path to your logo
               //alt="RNV Estate"
               className="img-fluid mb-2"
@@ -70,15 +79,28 @@ const Signin = () => {
                 Remember me
               </label>
             </div>
-            <button type="submit" className="btn btn-primary w-100"style={{ backgroundColor: '#00003E' }}>
-            <Link to="/" style={{ color: "#fff", textDecoration: "none", display: "block", width: "100%" }}>
-        <span> Sign In</span>
-    </Link>            </button>
+            <button
+              type="submit"
+              className="btn btn-primary w-100"
+              style={{ backgroundColor: "#00003E" }}
+            >
+              <Link
+                to="/"
+                style={{
+                  color: "#fff",
+                  textDecoration: "none",
+                  display: "block",
+                  width: "100%",
+                }}
+              >
+                <span> Sign In</span>
+              </Link>{" "}
+            </button>
           </form>
 
           <p className="mt-3 text-muted">
-    Forgot Password? <Link to="/Forget">Click here</Link>
-</p>
+            Forgot Password? <Link to="/Forget">Click here</Link>
+          </p>
         </div>
       </div>
     </div>
