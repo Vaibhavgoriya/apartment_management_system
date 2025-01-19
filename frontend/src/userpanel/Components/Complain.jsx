@@ -28,7 +28,7 @@ const ComplaintForm = () => {
 
   return (
     <div className="container-fluid bg-light min-vh-100">
-      <div className="container my-5">
+      <div className="container my-5 px-5 ty-5 mt-4">
         <div className="row">
           {/* Sidebar Navigation */}
           <div className="col-md-3">
