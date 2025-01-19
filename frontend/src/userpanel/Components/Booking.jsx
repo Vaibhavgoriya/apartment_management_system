@@ -36,8 +36,6 @@ function Booking() {
     },
   ]);
 
-  const [showBookings, setShowBookings] = useState(false); // Track Booking List visibility
-
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
@@ -46,6 +44,7 @@ function Booking() {
     event.preventDefault();
     console.log("Form submitted:", formData);
 
+    // Add new booking to the list
     const newBooking = {
       id: bookings.length + 1,
       date: formData.date,
@@ -57,7 +56,7 @@ function Booking() {
     setBookings([...bookings, newBooking]);
 
     // Clear form fields
-    setFormData({ date: "", startTime: "", endTime: "", purpose: "" });
+    setFormData({ date: "", startTime: "", endTime: "", purpose: "", hallType: "Hall A" });
   };
 
   return (
@@ -70,14 +69,12 @@ function Booking() {
               <button
                 className="btn btn-primary rounded-3 py-2 d-flex justify-content-between align-items-center"
                 style={{ backgroundColor: "#00003E" }}
-                onClick={() => setShowBookings(false)} // Show form
               >
                 <span>Booking Form</span>
                 <span>&gt;</span>
               </button>
               <button
                 className="btn btn-light border rounded-3 py-2 d-flex justify-content-between align-items-center"
-                onClick={() => setShowBookings(true)} // Show booking list
               >
                 <span>Booking List</span>
                 <span>&gt;</span>
@@ -85,7 +82,7 @@ function Booking() {
             </div>
           </div>
 
-          {/* Conditional Rendering */}
+          {/* Booking Form */}
           <div className="col-md-9">
             <h2 className="mb-4 fw-bold" style={{ color: "#00003E" }}>
               Hall Booking Form
@@ -148,6 +145,23 @@ function Booking() {
                   required
                 ></textarea>
               </div>
+              <div className="mb-3">
+                <label htmlFor="hallType" className="form-label">
+                  Hall Type
+                </label>
+                <select
+                  id="hallType"
+                  name="hallType"
+                  className="form-control"
+                  value={formData.hallType}
+                  onChange={handleChange}
+                  required
+                >
+                  <option value="Hall A">Hall A (Capacity: 50)</option>
+                  <option value="Hall B">Hall B (Capacity: 100)</option>
+                  <option value="Hall C">Hall C (Capacity: 150)</option>
+                </select>
+              </div>
               <button
                 type="submit"
                 className="btn btn-dark"
@@ -169,6 +183,7 @@ function Booking() {
                   <th>Starting Time</th>
                   <th>Ending Time</th>
                   <th>Purpose</th>
+                  <th>Hall Type</th>
                 </tr>
               </thead>
               <tbody>
@@ -179,6 +194,7 @@ function Booking() {
                     <td>{booking.startTime}</td>
                     <td>{booking.endTime}</td>
                     <td>{booking.purpose}</td>
+                    <td>{booking.hallType}</td>
                   </tr>
                 ))}
               </tbody>
