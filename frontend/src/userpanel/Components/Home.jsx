@@ -15,10 +15,10 @@ function Home() {
   };
 
   const users = [
-    { id: 1, name: "Nisha ", flat: "X01", wing: "A", mobile: "200000001" },
+    { id: 1, name: "Nishant ", flat: "X01", wing: "A", mobile: "200000001" },
     { id: 2, name: "Jenil", flat: "X02", wing: "A", mobile: "200000002" },
-    { id: 3, name: "vaibhav", flat: "X03", wing: "B", mobile: "200000003" },
-    { id: 4, name: "nenis", flat: "X04", wing: "B", mobile: "200000004" },
+    { id: 3, name: "Vaibhav", flat: "X03", wing: "B", mobile: "200000003" },
+    { id: 4, name: "Nenis", flat: "X04", wing: "B", mobile: "200000004" },
   ];
 
   return (
