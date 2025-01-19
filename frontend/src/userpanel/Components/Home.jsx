@@ -24,7 +24,7 @@ function Home() {
   return (
     <div className="container-fluid bg-light">
       {/* Search Bar */}
-      <div className="col-md-6 d-flex justify-content-end my-3">
+      <div className="d-flex justify-content-center align-items-center my-3">
         <div className="input-group w-auto">
           <input
             type="text"
