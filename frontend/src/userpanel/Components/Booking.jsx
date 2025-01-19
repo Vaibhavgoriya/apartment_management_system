@@ -81,7 +81,7 @@ function Booking() {
 
           {/* Booking Form */}
           <div className="col-md-9">
-            <h2 className="mb-4" style={{ color: "#00003E" }}>
+            <h2 className="mb-4 fw-bold" style={{ color: "#00003E" }}>
               Hall Booking Form
             </h2>
             <form onSubmit={handleSubmit}>

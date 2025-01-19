@@ -2,6 +2,20 @@
 function Home() {
   return (
     <div className="container-fluid bg-light">
+       <div className="col-md-6 d-flex justify-content-end">
+  <div className="input-group w-auto">
+    <input
+      type="text"
+      className="form-control"
+      placeholder="Search "
+      aria-label="Search "
+    />
+    <br/>
+    <button className="btn text-white" style={{ backgroundColor: '#00003E' }}>
+      Search
+    </button>
+  </div>
+</div>
       {" "}
       {/* Fluid container for full width, light background */}
       <div className="container mt-4">

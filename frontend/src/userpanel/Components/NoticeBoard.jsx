@@ -12,7 +12,7 @@ const NoticeBoard = () => {
     <div className="container-fluid bg-light">
       {/* Notice Section */}
       <div className="container my-5">
-        <h1 className="text mb-4" style={{ color: "#00003E" }}>
+        <h1 className="text mb-4 fw-bold" style={{ color: "#00003E" }}>
           Notice
         </h1>
         <div className="card shadow-sm">

@@ -3,7 +3,7 @@ const VehicleInfo = () => {
   return (
     <div className="container-fluid bg-light ">
           <div className="container my-5">
-      <h2 className="text-center mb-4 row justify-content-left" style={{ color: "#00003E" }}>Vehicle Info</h2>
+      <h2 className="text-center mb-4 row justify-content-left fw-bold" style={{ color: "#00003E" }}>Vehicle Info</h2>
       <div className="row justify-content-left mb-3">
           <div className="col-md-6">
             <div className="input-group">

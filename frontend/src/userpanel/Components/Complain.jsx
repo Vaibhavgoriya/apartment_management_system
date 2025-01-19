@@ -45,7 +45,7 @@ const ComplaintForm = () => {
 
           {/* Main Content */}
           <div className="col-md-9">
-            <h2 className="mb-4"style={{ color: "#00003E" }}>Complaint Form</h2>
+            <h2 className="mb-4 fw-bold"style={{ color: "#00003E" }}>Complaint Form</h2>
             <form onSubmit={handleSubmit}>
               <div className="mb-3">
                 <label htmlFor="date" className="form-label">
