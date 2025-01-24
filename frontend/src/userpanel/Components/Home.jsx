@@ -22,7 +22,7 @@ function Home() {
   ];
 
   return (
-    <div className="container-fluid bg-light">
+    <div className="container-fluid px-5 py-5 mt-5 bg-light">
       {/* Search Bar */}
       <div className="d-flex justify-content-center align-items-center my-3">
         <div className="input-group w-auto">
