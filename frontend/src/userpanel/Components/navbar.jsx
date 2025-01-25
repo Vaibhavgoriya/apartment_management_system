@@ -6,7 +6,7 @@ const Navbar = () => {
     <>
       <nav
         className="navbar navbar-expand-lg"
-        style={{ backgroundColor: "#000033" }}
+        style={{ backgroundColor: "#052C65" }}
       >
         <div className="container">
           <NavLink className="navbar-brand fw-bold text-white fs-2" to="/">

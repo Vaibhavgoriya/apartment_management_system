@@ -2,7 +2,7 @@ import "../Assets/css/userstyle.css"; // Minimal additional custom styles
 
 const Footer = () => {
   return (
-    <footer className="bg-dark text-white py-5">
+    <footer className=" py-5" style={{ backgroundColor: "#D9D9D9" }}>
       <div className="container">
         <div className="row">
           {/* Left Section */}
@@ -46,10 +46,10 @@ const Footer = () => {
 
           {/* Privacy and Terms Links */}
           <div className="col-md-6 text-md-end text-center mt-3 mt-md-0">
-            <a href="#privacy" className="text-white mx-2">
+            <a href="#privacy" className="mx-2">
               Privacy
             </a>
-            <a href="#terms" className="text-white mx-2">
+            <a href="#terms" className="mx-2">
               Terms
             </a>
           </div>

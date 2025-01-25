@@ -6,8 +6,8 @@ const Maintenance = () => {
       {/* Main Content */}
       <div className="container my-5 px-5 ty-5 mt-4">
         <div className="table-responsive">
-          <table className="table table-bordered table-striped">
-            <thead className="table-secondary">
+          <table className="table table-bordered table-striped table-hover">
+            <thead className="table-dark">
               <tr>
                 <th>SR</th>
                 <th>Amount Due</th>
@@ -22,7 +22,7 @@ const Maintenance = () => {
                 <td>₹300</td>
                 <td>Pending</td>
                 <td>30-12-2024</td>
-                <td><a href="#" className="text-primary text-decoration-none">Pay Now</a></td>
+                <td><a href="#" className="btn btn-success">Pay Now</a></td>
               </tr>
             </tbody>
           </table>
@@ -30,8 +30,8 @@ const Maintenance = () => {
 
         <h2 className="fw-bold mt-5">Paid Maintenance</h2>
         <div className="table-responsive">
-          <table className="table table-bordered table-striped">
-            <thead className="table-secondary">
+          <table className="table table-bordered table-striped table-hover">
+            <thead className="table-dark">
               <tr>
                 <th>SR</th>
                 <th>Amount Due</th>
@@ -47,7 +47,7 @@ const Maintenance = () => {
                   <td>₹300</td>
                   <td>Paid</td>
                   <td>30-12-2024</td>
-                  <td><a href="#" className="text-primary text-decoration-none">View</a></td>
+                  <td><a href="#" className="btn btn-success">View</a></td>
                 </tr>
               ))}
             </tbody>

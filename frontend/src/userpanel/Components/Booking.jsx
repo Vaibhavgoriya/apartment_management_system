@@ -88,6 +88,23 @@ function Booking() {
               Hall Booking Form
             </h2>
             <form onSubmit={handleSubmit}>
+            <div className="mb-3">
+                <label htmlFor="hallType" className="form-label">
+                  Hall Type
+                </label>
+                <select
+                  id="hallType"
+                  name="hallType"
+                  className="form-control"
+                  value={formData.hallType}
+                  onChange={handleChange}
+                  required
+                >
+                  <option value="Hall A">Hall A (Capacity: 50)</option>
+                  <option value="Hall B">Hall B (Capacity: 100)</option>
+                  <option value="Hall C">Hall C (Capacity: 150)</option>
+                </select>
+              </div>
               <div className="mb-3">
                 <label htmlFor="date" className="form-label">
                   Date
@@ -145,23 +162,7 @@ function Booking() {
                   required
                 ></textarea>
               </div>
-              <div className="mb-3">
-                <label htmlFor="hallType" className="form-label">
-                  Hall Type
-                </label>
-                <select
-                  id="hallType"
-                  name="hallType"
-                  className="form-control"
-                  value={formData.hallType}
-                  onChange={handleChange}
-                  required
-                >
-                  <option value="Hall A">Hall A (Capacity: 50)</option>
-                  <option value="Hall B">Hall B (Capacity: 100)</option>
-                  <option value="Hall C">Hall C (Capacity: 150)</option>
-                </select>
-              </div>
+             
               <button
                 type="submit"
                 className="btn btn-dark"
@@ -175,15 +176,15 @@ function Booking() {
             <h2 className="mt-4" style={{ color: "#00003E" }}>
               Past Bookings
             </h2>
-            <table className="table table-bordered">
-              <thead>
+            <table className="table table-bordered table-hover">
+              <thead className= "table-dark">
                 <tr>
                   <th>Id</th>
+                  <th>Hall Type</th>
                   <th>Date</th>
                   <th>Starting Time</th>
                   <th>Ending Time</th>
                   <th>Purpose</th>
-                  <th>Hall Type</th>
                 </tr>
               </thead>
               <tbody>

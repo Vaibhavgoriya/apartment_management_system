@@ -12,7 +12,7 @@ const Signin = () => {
       <div className="row w-100">
         <div
           className="w-100"
-          style={{ height: "20px", backgroundColor: "#00003E" }}
+          style={{ height: "20px", backgroundColor: "#052C65" }}
         ></div>
         {/* Left Section */}
         <div className="col-md-6 d-flex flex-column justify-content-center align-items-center bg-light p-5">
@@ -82,7 +82,7 @@ const Signin = () => {
             <button
               type="submit"
               className="btn btn-primary w-100"
-              style={{ backgroundColor: "#00003E" }}
+              style={{ backgroundColor: "#052C65" }}
             >
               <Link
                 to="/"
