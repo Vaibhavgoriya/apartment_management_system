@@ -83,6 +83,16 @@ const Navbar = () => {
                   className={({ isActive }) =>
                     `nav-link text-white ${isActive ? "active" : ""}`
                   }
+                  to="/addVisitorPage"
+                >
+                  Add Visitor
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink
+                  className={({ isActive }) =>
+                    `nav-link text-white ${isActive ? "active" : ""}`
+                  }
                   to="/vehicle-info"
                 >
                   Vehicle Info
@@ -90,9 +100,6 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <NavLink to="/sign-in" className="btn btn-warning">
-            Sign In
-          </NavLink>
         </div>
       </nav>
     </>

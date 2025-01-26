@@ -11,6 +11,7 @@ import Signin from "./Signin";
 import Forget from "./Forget";
 import Confirm from "./Confirm";
 import Reset from "./Reset";
+import AddVisitorPage from "./AddVisitorPage";
 
 const Userapp = () => {
   return (
@@ -24,6 +25,7 @@ const Userapp = () => {
           <Route path="/booking" element={<Booking />} />
           <Route path="/notice-board" element={<NoticeBoard />} />
           <Route path="/vehicle-info" element={<VehicleInfo />} />
+          <Route path="/addVisitorPage" element={<AddVisitorPage />} />
           <Route path="/sign-in" element={<Signin />} />
           <Route path="/forget" element={<Forget />} />
           <Route path="/confirm" element={<Confirm />} />

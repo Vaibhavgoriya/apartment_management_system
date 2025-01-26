@@ -8,13 +8,15 @@ const NoticeBoard = () => {
     {
       date: "Nov 8th, 2023",
       title: "Meeting",
-      description: "Navratri celebration will be held in the community hall. All residents are invited to join the event.",
+      description:
+        "Navratri celebration will be held in the community hall. All residents are invited to join the event.",
       link: "#",
     },
     {
       date: "Dec 1st, 2023",
       title: "Maintenance Notice",
-      description: "Scheduled power maintenance on Dec 5th, 2023, from 10 AM to 2 PM.",
+      description:
+        "Scheduled power maintenance on Dec 5th, 2023, from 10 AM to 2 PM.",
       link: "#",
     },
   ];
@@ -30,19 +32,29 @@ const NoticeBoard = () => {
   };
 
   return (
-    <div className="container-fluid bg-light">
-      {/* Notice Section */}
-      <div className="container my-5">
-        <h1 className="text mb-4 fw-bold" style={{ color: "#00003E" }}>
-          Notice
-        </h1>
-        <div className="card shadow-sm">
-          <div className="card-body">
-            <h5 className="card-title" style={{ color: "#00003E" }}>
-              View Notice
-            </h5>
-            <div className="table-responsive mt-3">
-              <table className="table table-bordered table-striped">
+    <div className="container-fluid bg-light min-vh-100 px-5 py-5">
+      {/* Page Header */}
+      <div className="d-flex justify-content-center align-items-center mb-4 text-center">
+        <div>
+          <h1 className="fw-bold text-dark" style={{ color: "#00003E" }}>
+            Notice Board
+          </h1>
+          <p className="text-muted">Stay updated with the latest notices.</p>
+        </div>
+      </div>
+
+      <div className="row">
+        <div className="col-md-12">
+          {/* Notices Section */}
+          <div
+            className="shadow-sm rounded bg-white p-4"
+            style={{ border: "1px solid #ddd" }}
+          >
+            <h2 className="fw-bold mb-4" style={{ color: "#00003E" }}>
+              Latest Notices
+            </h2>
+            <div className="table-responsive">
+              <table className="table table-bordered table-striped table-hover">
                 <thead className="table-dark">
                   <tr>
                     <th>Date</th>
@@ -59,8 +71,12 @@ const NoticeBoard = () => {
                       <td>{notice.description.substring(0, 30)}...</td>
                       <td>
                         <button
-                          className="btn btn-primary btn-sm"
+                          className="btn btn-primary btn-sm rounded-3"
                           onClick={() => handleShow(notice)}
+                          style={{
+                            backgroundColor: "#00003E",
+                            color: "white",
+                          }}
                         >
                           Know More
                         </button>
@@ -74,21 +90,38 @@ const NoticeBoard = () => {
         </div>
       </div>
 
-      {/* Bootstrap Modal */}
+      {/* Modal for Viewing Notice Details */}
       {showModal && selectedNotice && (
-        <div className="modal fade show d-block" tabIndex="-1" style={{ backgroundColor: "rgba(0,0,0,0.5)" }}>
+        <div
+          className="modal fade show d-block"
+          tabIndex="-1"
+          style={{ backgroundColor: "rgba(0,0,0,0.5)" }}
+        >
           <div className="modal-dialog">
-            <div className="modal-content">
+            <div className="modal-content rounded-4 shadow-lg">
               <div className="modal-header">
-                <h5 className="modal-title">{selectedNotice.title}</h5>
-                <button type="button" className="btn-close" onClick={handleClose}></button>
+                <h5 className="modal-title" style={{ color: "#00003E" }}>
+                  {selectedNotice.title}
+                </h5>
+                <button
+                  type="button"
+                  className="btn-close"
+                  onClick={handleClose}
+                ></button>
               </div>
               <div className="modal-body">
-                <p><strong>Date:</strong> {selectedNotice.date}</p>
-                <p><strong>Description:</strong> {selectedNotice.description}</p>
+                <p>
+                  <strong>Date:</strong> {selectedNotice.date}
+                </p>
+                <p>
+                  <strong>Description:</strong> {selectedNotice.description}
+                </p>
               </div>
               <div className="modal-footer">
-                <button className="btn btn-secondary" onClick={handleClose}>
+                <button
+                  className="btn btn-secondary rounded-3"
+                  onClick={handleClose}
+                >
                   Close
                 </button>
               </div>

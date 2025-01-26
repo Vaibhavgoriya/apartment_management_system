@@ -1,42 +1,91 @@
+import { useState } from "react";
 
 const VehicleInfo = () => {
+  const vehicles = [
+    { id: "V001", name: "Analysis Name", phone: "9899999999" },
+    { id: "V002", name: "John Doe", phone: "9888888888" },
+    { id: "V003", name: "Jane Smith", phone: "9777777777" },
+  ];
+
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filteredVehicles, setFilteredVehicles] = useState(vehicles);
+
+  // Update filtered vehicles as the user types
+  const handleSearch = (e) => {
+    const searchTerm = e.target.value;
+    setSearchTerm(searchTerm);
+
+    const filtered = vehicles.filter((vehicle) =>
+      vehicle.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setFilteredVehicles(filtered);
+  };
+
   return (
-    <div className="container-fluid bg-light px-5 py-2 ">
-          <div className="container my-5">
-      <h2 className="text-center mb-4 row justify-content-left fw-bold" style={{ color: "#00003E" }}>Vehicle Info</h2>
-      <div className="row justify-content-left mb-3">
+    <div className="container-fluid bg-light px-5 py-5">
+      <div className="container my-5">
+        <div className="row justify-content-between align-items-center mb-4">
           <div className="col-md-6">
-            <div className="input-group">
+            <h2 className="fw-bold" style={{ color: "#00003E" }}>
+              Vehicle Info
+            </h2>
+            <p className="text-muted">
+              Search and view vehicle details easily.
+            </p>
+          </div>
+          <div className="col-md-6 text-end">
+            <div
+              className="input-group shadow-sm rounded"
+              style={{
+                backgroundColor: "#ffffff",
+                border: "1px solid #ddd",
+              }}
+            >
               <input
                 type="text"
-                className="form-control"
-                placeholder="Search Vehicle Number ..."
-                aria-label="Search Vehicle Number"
+                className="form-control w-25" // 25% of container width
+                placeholder="Search Vehicle Name..."
+                aria-label="Search Vehicle Name"
+                value={searchTerm}
+                onChange={handleSearch}
               />
-              <button className="btn btn-dark"style={{ backgroundColor: '#00003E' }}>Search</button>
             </div>
           </div>
         </div>
-        <br/>
-        <table className="table table-striped table-bordered">
-          <thead className="table-dark">
-            <tr>
-              <th scope="col">Name</th>
-              <th scope="col">Apartment</th>
-              <th scope="col">Contact</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Analysis Name</td>
-              <td>A-202</td>
-              <td>9899999999</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
 
-     
+        {/* Vehicle Table Section */}
+        <div
+          className="shadow-sm rounded bg-white p-4"
+          style={{ border: "1px solid #ddd" }}
+        >
+          <table className="table table-striped table-bordered">
+            <thead className="table-dark">
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Phone Number</th>
+              </tr>
+            </thead>
+            <tbody>
+              {filteredVehicles.length === 0 ? (
+                <tr>
+                  <td colSpan="3" className="text-center text-muted">
+                    No results found.
+                  </td>
+                </tr>
+              ) : (
+                filteredVehicles.map((vehicle, index) => (
+                  <tr key={index}>
+                    <td>{vehicle.id}</td>
+                    <td>{vehicle.name}</td>
+                    <td>{vehicle.phone}</td>
+                  </tr>
+                ))
+              )}
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   );
 };
