@@ -66,11 +66,11 @@ function Booking() {
     <div className="container-fluid bg-light min-vh-100">
       <div className="container py-5">
         {/* Title and Subtitle */}
-        <div className="text-center mb-5">
-          <h1 className="fw-bold" style={{ color: "#00003E" }}>
-            Hall Booking System
+        <div>
+          <h1 className="fw-bold text-dark mb-1" style={{ color: "#00003E" }}>
+            Hall Booking 
           </h1>
-          <p className="text-muted fs-5">
+          <p className="text-muted mb-0">
             Easily manage and book halls for your events
           </p>
         </div>
@@ -86,8 +86,8 @@ function Booking() {
                   } rounded-3 py-2`}
                   onClick={() => setShowBookingList(false)}
                   style={{
-                    backgroundColor: !showBookingList ? "#00003E" : "white",
-                    color: !showBookingList ? "white" : "#00003E",
+                    backgroundColor: !showBookingList ? "#052C65" : "white",
+                    color: !showBookingList ? "white" : "#052C65",
                   }}
                 >
                   Booking Form
@@ -98,8 +98,8 @@ function Booking() {
                   } rounded-3 py-2`}
                   onClick={() => setShowBookingList(true)}
                   style={{
-                    backgroundColor: showBookingList ? "#00003E" : "white",
-                    color: showBookingList ? "white" : "#00003E",
+                    backgroundColor: showBookingList ? "#052C65" : "white",
+                    color: showBookingList ? "white" : "#052C65",
                   }}
                 >
                   Booking List
@@ -224,13 +224,18 @@ function Booking() {
                       required
                     ></textarea>
                   </div>
+                  <div className="d-flex justify-content-center">
                   <button
                     type="submit"
-                    className="btn btn-dark w-100 py-2"
-                    style={{ backgroundColor: "#00003E" }}
+                    className="btn btn-dark w-40"
+                    style={{
+                      backgroundImage:
+                        "linear-gradient(to right, #007bff, #0056b3)",
+                    }}
                   >
-                    Submit
+                    Submit Request
                   </button>
+                </div>
                 </form>
               </div>
             )}
