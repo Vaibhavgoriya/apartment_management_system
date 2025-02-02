@@ -1,10 +1,9 @@
-import Userapp from "./userpanel/Components/Userapp";
-
+import Landingapp from "./landing_page/Components/landingapp";
 
 function App() {
   return (
     <>
-      <Userapp />
+      <Landingapp />
     </>
   );
 }

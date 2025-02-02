@@ -3,8 +3,8 @@ import { useState } from "react";
 const VehicleInfo = () => {
   const vehicles = [
     { id: "V001", name: "Analysis Name", phone: "9899999999" },
-    { id: "V002", name: "John Doe", phone: "9888888888" },
-    { id: "V003", name: "Jane Smith", phone: "9777777777" },
+    { id: "V002", name: "Nishant", phone: "9888888888" },
+    { id: "V003", name: "Radhesh", phone: "9777777777" },
   ];
 
   const [searchTerm, setSearchTerm] = useState("");
