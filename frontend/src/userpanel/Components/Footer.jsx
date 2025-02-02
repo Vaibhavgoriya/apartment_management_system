@@ -7,8 +7,8 @@ const Footer = () => {
         <div className="row">
           {/* Left Section */}
           <div className="col-md-4 mb-4">
-            <h2>RNV</h2>
-            <p>Copyright © 2023 RNV</p>
+          <h2 style={{ color: "#052C65" }}>RNV</h2>
+          <p>Copyright © 2023 RNV</p>
             <p>Designed by RNV</p>
           </div>
 

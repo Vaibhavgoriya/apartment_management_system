@@ -50,8 +50,8 @@ const AddVisitorPage = () => {
       {/* Page Header */}
       <div className="d-flex justify-content-between align-items-center mb-4">
         <div>
-          <h1 className="fw-bold text-dark">Visitor Management</h1>
-          <p className="text-muted">Submit and manage your visitor requests.</p>
+          <h1 className="fw-bold text-dark mb-1">Visitor Management</h1>
+          <p className="text-muted mb-0">Submit and manage your visitor requests.</p>
         </div>
       </div>
 
@@ -72,8 +72,8 @@ const AddVisitorPage = () => {
                 } rounded-3 py-2`}
                 onClick={() => setShowVisitorList(false)}
                 style={{
-                  backgroundColor: !showVisitorList ? "#00003E" : "white",
-                  color: !showVisitorList ? "white" : "#00003E",
+                  backgroundColor: !showVisitorList ? "#052C65" : "white",
+                  color: !showVisitorList ? "white" : "#052C65",
                   fontWeight: "bold",
                 }}
               >
@@ -85,8 +85,8 @@ const AddVisitorPage = () => {
                 } rounded-3 py-2`}
                 onClick={() => setShowVisitorList(true)}
                 style={{
-                  backgroundColor: showVisitorList ? "#00003E" : "white",
-                  color: showVisitorList ? "white" : "#00003E",
+                  backgroundColor: showVisitorList ? "#052C65" : "white",
+                  color: showVisitorList ? "white" : "#052C65",
                   fontWeight: "bold",
                 }}
               >
@@ -201,13 +201,18 @@ const AddVisitorPage = () => {
                     }
                   />
                 </div>
-                <button
-                  type="submit"
-                  className="btn btn-dark w-100"
-                  style={{ backgroundColor: "#00003E" }}
-                >
-                  Submit Request
-                </button>
+                <div className="d-flex justify-content-center">
+                  <button
+                    type="submit"
+                    className="btn btn-dark w-40"
+                    style={{
+                      backgroundImage:
+                        "linear-gradient(to right, #007bff, #0056b3)",
+                    }}
+                  >
+                    Submit Request
+                  </button>
+                </div>
               </form>
             </div>
           )}

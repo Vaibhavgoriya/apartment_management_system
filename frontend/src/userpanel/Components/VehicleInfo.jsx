@@ -3,8 +3,8 @@ import { useState } from "react";
 const VehicleInfo = () => {
   const vehicles = [
     { id: "V001", name: "Analysis Name", phone: "9899999999" },
-    { id: "V002", name: "John Doe", phone: "9888888888" },
-    { id: "V003", name: "Jane Smith", phone: "9777777777" },
+    { id: "V002", name: "Nishant", phone: "9888888888" },
+    { id: "V003", name: "Radhesh", phone: "9777777777" },
   ];
 
   const [searchTerm, setSearchTerm] = useState("");
@@ -26,10 +26,10 @@ const VehicleInfo = () => {
       <div className="container my-5">
         <div className="row justify-content-between align-items-center mb-4">
           <div className="col-md-6">
-            <h2 className="fw-bold" style={{ color: "#00003E" }}>
+            <h2 className="fw-bold text-dark mb-1" style={{ color: "#00003E" }}>
               Vehicle Info
             </h2>
-            <p className="text-muted">
+            <p className="text-muted mb-0">
               Search and view vehicle details easily.
             </p>
           </div>
@@ -60,7 +60,7 @@ const VehicleInfo = () => {
         >
           <table className="table table-striped table-bordered">
             <thead className="table-dark">
-              <tr>
+              <tr style={{backgroundColor:"#052C65"}}>
                 <th scope="col">ID</th>
                 <th scope="col">Name</th>
                 <th scope="col">Phone Number</th>

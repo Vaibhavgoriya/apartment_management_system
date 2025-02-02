@@ -4,8 +4,8 @@ const Maintenance = () => {
       {/* Page Header */}
       <div className="d-flex justify-content-between align-items-center mb-4">
         <div>
-          <h1 className="fw-bold text-dark">Maintenance Dashboard</h1>
-          <p className="text-muted">
+          <h1 className="fw-bold text-dark mb-1">Maintenance Dashboard</h1>
+          <p className="text-muted mb-0">
             Keep track of your pending and paid maintenance payments easily.
           </p>
         </div>

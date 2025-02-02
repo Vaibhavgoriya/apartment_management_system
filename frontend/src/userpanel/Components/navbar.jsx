@@ -1,15 +1,8 @@
 import { NavLink } from "react-router-dom";
-import "../Assets/css/userstyle.css"; // Minimal custom tweaks
+import { useState } from "react";
+import "../Assets/css/userstyle.css"; // Your custom CSS
 
 const Navbar = () => {
-  // Function to handle collapsing the navbar after clicking a nav item
-  const handleNavItemClick = () => {
-    const navbarCollapse = document.querySelector(".navbar-collapse");
-    if (navbarCollapse.classList.contains("show")) {
-      navbarCollapse.classList.remove("show");
-    }
-  };
-
   return (
     <>
       <nav
@@ -42,7 +35,6 @@ const Navbar = () => {
                     `nav-link text-white ${isActive ? "active" : ""}`
                   }
                   to="/"
-                  onClick={handleNavItemClick} // Collapse the navbar when clicked
                 >
                   Home
                 </NavLink>
@@ -53,7 +45,6 @@ const Navbar = () => {
                     `nav-link text-white ${isActive ? "active" : ""}`
                   }
                   to="/maintenance"
-                  onClick={handleNavItemClick} // Collapse the navbar when clicked
                 >
                   Maintenance
                 </NavLink>
@@ -64,7 +55,6 @@ const Navbar = () => {
                     `nav-link text-white ${isActive ? "active" : ""}`
                   }
                   to="/complain"
-                  onClick={handleNavItemClick} // Collapse the navbar when clicked
                 >
                   Complain
                 </NavLink>
@@ -75,7 +65,6 @@ const Navbar = () => {
                     `nav-link text-white ${isActive ? "active" : ""}`
                   }
                   to="/booking"
-                  onClick={handleNavItemClick} // Collapse the navbar when clicked
                 >
                   Booking
                 </NavLink>
@@ -86,7 +75,6 @@ const Navbar = () => {
                     `nav-link text-white ${isActive ? "active" : ""}`
                   }
                   to="/notice-board"
-                  onClick={handleNavItemClick} // Collapse the navbar when clicked
                 >
                   Notice Board
                 </NavLink>
@@ -97,7 +85,6 @@ const Navbar = () => {
                     `nav-link text-white ${isActive ? "active" : ""}`
                   }
                   to="/addVisitorPage"
-                  onClick={handleNavItemClick} // Collapse the navbar when clicked
                 >
                   Add Visitor
                 </NavLink>
@@ -108,16 +95,15 @@ const Navbar = () => {
                     `nav-link text-white ${isActive ? "active" : ""}`
                   }
                   to="/vehicle-info"
-                  onClick={handleNavItemClick} // Collapse the navbar when clicked
                 >
                   Vehicle Info
                 </NavLink>
               </li>
             </ul>
-          </div>
+          )}
         </div>
-      </nav>
-    </>
+      </div>
+    </nav>
   );
 };
 

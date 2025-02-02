@@ -25,10 +25,10 @@ const ComplaintForm = () => {
   return (
     <div className="container-fluid bg-light min-vh-100 px-5 py-5">
       {/* Page Header */}
-      <div className="d-flex justify-content-center align-items-center mb-4">
-        <div className="text-center">
-          <h1 className="fw-bold text-dark">Complaint Management</h1>
-          <p className="text-muted">Submit and view your complaints easily.</p>
+      <div className="d-flex justify-content-between align-items-center mb-4">
+        <div>
+          <h1 className="fw-bold text-dark mb-1">Complaint Management</h1>
+          <p className="text-muted mb-0">Submit and view your complaints easily.</p>
         </div>
       </div>
 
@@ -49,8 +49,8 @@ const ComplaintForm = () => {
                 } rounded-3 py-2`}
                 onClick={() => setShowComplaintList(false)}
                 style={{
-                  backgroundColor: !showComplaintList ? "#00003E" : "white",
-                  color: !showComplaintList ? "white" : "#00003E",
+                  backgroundColor: !showComplaintList ? "#052C65" : "white",
+                  color: !showComplaintList ? "white" : "#052C65",
                   fontWeight: "bold",
                 }}
               >
@@ -62,8 +62,8 @@ const ComplaintForm = () => {
                 } rounded-3 py-2`}
                 onClick={() => setShowComplaintList(true)}
                 style={{
-                  backgroundColor: showComplaintList ? "#00003E" : "white",
-                  color: showComplaintList ? "white" : "#00003E",
+                  backgroundColor: showComplaintList ? "#052C65" : "white",
+                  color: showComplaintList ? "white" : "#052C65",
                   fontWeight: "bold",
                 }}
               >
@@ -165,13 +165,18 @@ const ComplaintForm = () => {
                     required
                   ></textarea>
                 </div>
-                <button
-                  type="submit"
-                  className="btn btn-dark"
-                  style={{ backgroundColor: "#00003E" }}
-                >
-                  Submit
-                </button>
+                <div className="d-flex justify-content-center">
+                  <button
+                    type="submit"
+                    className="btn btn-dark w-40"
+                    style={{
+                      backgroundImage:
+                        "linear-gradient(to right, #007bff, #0056b3)",
+                    }}
+                  >
+                    Submit Request
+                  </button>
+                </div>
               </form>
             </div>
           )}
