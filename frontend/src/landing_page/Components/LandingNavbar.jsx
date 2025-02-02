@@ -1,16 +1,68 @@
-import { NavLink } from "react-router-dom";
-import "../Assets/css/landingstyle.css"; // Ensure this path is correct
+import { useState, useEffect } from "react";
+import { Link as ScrollLink } from "react-scroll";
+import { Link, useLocation } from "react-router-dom";
+import "../Assets/css/landingstyle.css"; // Your custom CSS
 
-const LandingNavbar = () => {
+const Navbar = () => {
+  const location = useLocation();
+  const [activeLink, setActiveLink] = useState(""); // To track the active link based on scroll
+
+  // Function to check if link is active
+  const isActive = (sectionId) => activeLink === sectionId;
+
+  // Handle navbar collapse after clicking
+  const handleNavItemClick = () => {
+    const navbarCollapse = document.querySelector(".navbar-collapse");
+    if (navbarCollapse.classList.contains("show")) {
+      navbarCollapse.classList.remove("show");
+    }
+  };
+
+  // Handle scroll and update the active link based on section in view
+  const handleScroll = () => {
+    const sections = document.querySelectorAll(".scroll-section");
+    let found = false;
+    sections.forEach((section) => {
+      if (
+        section.getBoundingClientRect().top <= window.innerHeight / 2 &&
+        !found
+      ) {
+        setActiveLink(section.id); // Set active link based on the section in view
+        found = true;
+      }
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <nav
-      className="navbar navbar-expand-lg"
-      style={{ backgroundColor: "#000033" }}
+      className="navbar navbar-expand-lg sticky-top"
+      style={{ backgroundColor: "#052C65" }}
     >
       <div className="container">
-        <NavLink className="navbar-brand fw-bold text-white fs-2" to="/">
-          RNV
-        </NavLink>
+        {/* Brand Logo */}
+        {location.pathname === "/" ? (
+          <ScrollLink
+            className="navbar-brand fw-bold text-white fs-2"
+            to="hero"
+            smooth={true}
+            duration={500}
+          >
+            RNV
+          </ScrollLink>
+        ) : (
+          <Link to="/" className="navbar-brand fw-bold text-white fs-2">
+            RNV
+          </Link>
+        )}
+
+        {/* Mobile Toggle Button */}
         <button
           className="navbar-toggler"
           type="button"
@@ -20,85 +72,77 @@ const LandingNavbar = () => {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span className="navbar-toggler-icon">
-            {/* Add a fallback SVG for the icon */}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 16 16"
-              fill="white"
-              width="20"
-              height="20"
-            >
-              <path
-                fillRule="evenodd"
-                d="M1.5 12a.5.5 0 0 1 0-1h13a.5.5 0 0 1 0 1h-13zm0-4a.5.5 0 0 1 0-1h13a.5.5 0 0 1 0 1h-13zm0-4a.5.5 0 0 1 0-1h13a.5.5 0 0 1 0 1h-13z"
-              />
-            </svg>
-          </span>
+          <span className="navbar-toggler-icon"></span>
         </button>
+
+        {/* Navbar Items */}
         <div
-          className="collapse navbar-collapse justify-content-center"
+          className="collapse navbar-collapse justify-content-between"
           id="navbarNav"
         >
-          <ul className="navbar-nav text-center">
-            <li className="nav-item">
-              <NavLink
-                className={({ isActive }) =>
-                  `nav-link text-white ${isActive ? "active" : ""}`
-                }
-                to="/"
-              >
-                Home
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                className={({ isActive }) =>
-                  `nav-link text-white ${isActive ? "active" : ""}`
-                }
-                to="/maintenance"
-              >
-                About Us
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                className={({ isActive }) =>
-                  `nav-link text-white ${isActive ? "active" : ""}`
-                }
-                to="/complain"
-              >
-                Services
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                className={({ isActive }) =>
-                  `nav-link text-white ${isActive ? "active" : ""}`
-                }
-                to="/booking"
-              >
-                Apartments
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                className={({ isActive }) =>
-                  `nav-link text-white ${isActive ? "active" : ""}`
-                }
-                to="/notice-board"
-              >
-                Contact Us
-              </NavLink>
-            </li>
+          <ul className="navbar-nav mx-auto text-center">
+            {[
+              { path: "/", label: "Home", scrollTarget: "hero" },
+              { path: "/about", label: "About Us", scrollTarget: "aboutUs" },
+              {
+                path: "/why-choose-us",
+                label: "Why Choose Us",
+                scrollTarget: "whyChooseUs",
+              },
+              {
+                path: "/services",
+                label: "Services",
+                scrollTarget: "services",
+              },
+              {
+                path: "/apartments",
+                label: "Apartments",
+                scrollTarget: "apartments",
+              },
+              {
+                path: "/contact",
+                label: "Contact Us",
+                scrollTarget: "contactUs",
+              },
+            ].map(({ path, label, scrollTarget }) => (
+              <li className="nav-item" key={path}>
+                {location.pathname === "/" ? (
+                  <ScrollLink
+                    className={`nav-link text-white ${
+                      isActive(scrollTarget) ? "active" : ""
+                    }`}
+                    to={scrollTarget}
+                    smooth={true}
+                    duration={500}
+                    onClick={handleNavItemClick}
+                  >
+                    {label}
+                  </ScrollLink>
+                ) : (
+                  <Link
+                    to={path}
+                    className={`nav-link text-white ${
+                      isActive(scrollTarget) ? "active" : ""
+                    }`}
+                    onClick={handleNavItemClick}
+                  >
+                    {label}
+                  </Link>
+                )}
+              </li>
+            ))}
           </ul>
+
+          {/* Sign In Button */}
+          <div className="d-flex">
+            <Link to="/sign_in" className="btn btn-warning">
+              Sign In
+            </Link>
+          </div>
         </div>
-        <NavLink to="/sign_in" className="btn btn-warning">
-          Sign In
-        </NavLink>
       </div>
     </nav>
   );
 };
 
-export default LandingNavbar;
+export default Navbar;

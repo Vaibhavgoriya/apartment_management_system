@@ -5,7 +5,8 @@ import logo from "../Assets/image/rnvlogo.png";
 const HeroSection = () => {
   return (
     <div
-      className="hero-section d-flex align-items-center justify-content-between px-5"
+      id="hero"
+      className="hero-section d-flex align-items-center justify-content-between px-5 scroll-section"
       style={{ height: "100vh" }}
     >
       {/* Left Content */}
@@ -15,7 +16,7 @@ const HeroSection = () => {
           src={logo}
           alt="Logo"
           className="mb-4"
-          style={{ maxWidth: "250px", marginTop: "-20x0px"  }}
+          style={{ maxWidth: "250px", marginTop: "-20x0px" }}
         />
 
         <h6 className="text-uppercase text-muted mb-3">

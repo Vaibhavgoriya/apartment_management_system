@@ -1,10 +1,18 @@
-
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../Assets/css/landingstyle.css"; // Optional custom styles
 import login from "../Assets/image/login.jpg"; // Optional custom styles
 import logo from "../Assets/image/rnvlogo.png"; // Optional custom styles
 
 const Signin = () => {
+  const navigate = useNavigate();
+
+  const handleSignIn = (e) => {
+    e.preventDefault();
+    // Add your sign-in logic here, e.g., authentication
+    // On successful sign-in, navigate to the home page
+    navigate("/"); // Redirect to the home page after sign-in
+  };
+
   return (
     <div
       className="signin-container d-flex align-items-center justify-content-center"
@@ -45,7 +53,7 @@ const Signin = () => {
             <p className="text-muted">Sign in with your details to continue</p>
           </div>
 
-          <form className="w-100" style={{ maxWidth: "400px" }}>
+          <form className="w-100" style={{ maxWidth: "400px" }} onSubmit={handleSignIn}>
             <div className="mb-3">
               <label htmlFor="email" className="form-label">
                 Email
@@ -85,17 +93,7 @@ const Signin = () => {
               className="btn btn-primary w-100"
               style={{ backgroundColor: "#00003E" }}
             >
-              <Link
-                to="/"
-                style={{
-                  color: "#fff",
-                  textDecoration: "none",
-                  display: "block",
-                  width: "100%",
-                }}
-              >
-                <span> Sign In</span>
-              </Link>{" "}
+              <span> Sign In</span>
             </button>
           </form>
 
@@ -109,4 +107,3 @@ const Signin = () => {
 };
 
 export default Signin;
-
