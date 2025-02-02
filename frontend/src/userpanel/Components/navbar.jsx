@@ -1,5 +1,4 @@
 import { NavLink } from "react-router-dom";
-import { useState } from "react";
 import "../Assets/css/userstyle.css"; // Your custom CSS
 
 const Navbar = () => {
@@ -100,10 +99,10 @@ const Navbar = () => {
                 </NavLink>
               </li>
             </ul>
-          )}
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </>
   );
 };
 
