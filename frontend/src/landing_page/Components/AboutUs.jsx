@@ -14,10 +14,7 @@ const AboutUs = () => {
     // }, []);
   
     return (
-      <div
-        id="aboutUs"
-        className="container py-5 scroll-section"
-      >
+      <div id="aboutUs" className="container py-5 scroll-section">
         {/* Section Header */}
         <div
           className="text-center mb-5"

@@ -1,18 +1,18 @@
-// import { useEffect } from "react";
-// import AOS from "aos";
-// import "aos/dist/aos.css";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const WhyChooseUs = () => {
-  //   useEffect(() => {
-  //     AOS.init({
-  //       duration: 1000,
-  //       easing: "ease-in-out",
-  //       once: true,
-  //     });
-  //   }, []);
+    useEffect(() => {
+      AOS.init({
+        duration: 1000,
+        easing: "ease-in-out",
+        once: true,
+      });
+    }, []);
 
   return (
-    <div className="container py-5">
+    <div className="container py-5" id="whyChooseUs">
       <div className="row align-items-center">
         {/* Left Content */}
         <div className="col-md-6" data-aos="fade-right">
@@ -75,7 +75,7 @@ const WhyChooseUs = () => {
         </div>
 
         {/* Right Content */}
-        <div className="col-md-6" data-aos="fade-left">
+        <div className="col-md-6" data-aos="fade-right">
           <div className="row g-3">
             {/* Box 1 */}
             <div className="col-6">
