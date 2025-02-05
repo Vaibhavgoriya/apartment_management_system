@@ -106,7 +106,7 @@ const ContactUs = () => {
         <div className="col-md-6" data-aos="fade-up" data-aos-delay="700">
           <div
             className="card p-4 border-0"
-            style={{ backgroundColor: "#12172d", color: "#fff" }}
+            style={{ backgroundColor: "#15154D", color: "#fff" }}
           >
             <h4 className="text-center mb-4">Send a Message</h4>
             <form>
@@ -119,7 +119,7 @@ const ContactUs = () => {
                   className="form-control"
                   id="name"
                   placeholder="Your Name"
-                  style={{ backgroundColor: "#1c2236", color: "#fff" }}
+                  style={{ backgroundColor: "#15154D", color: "#fff" }}
                 />
               </div>
               <div className="mb-3">
@@ -131,7 +131,7 @@ const ContactUs = () => {
                   className="form-control"
                   id="email"
                   placeholder="Your Email"
-                  style={{ backgroundColor: "#1c2236", color: "#fff" }}
+                  style={{ backgroundColor: "#15154D", color: "#fff" }}
                 />
               </div>
               <div className="mb-3">
@@ -143,7 +143,7 @@ const ContactUs = () => {
                   id="message"
                   rows="4"
                   placeholder="Your Message"
-                  style={{ backgroundColor: "#1c2236", color: "#fff" }}
+                  style={{ backgroundColor: "#15154D", color: "#fff" }}
                 ></textarea>
               </div>
               <button

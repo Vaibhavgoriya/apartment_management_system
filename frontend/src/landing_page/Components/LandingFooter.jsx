@@ -4,8 +4,8 @@ const LandingFooter = () => {
   return (
     <footer className="bg-dark text-white py-5">
       <div className="container">
-        <div className="row">
-          {/* Left Section */}
+      <div className="row" style={{ Color: "#D9D9D9" }}>
+      {/* Left Section */}
           <div className="col-md-4 mb-4">
             <h2>RNV</h2>
             <p>Copyright © 2023 RNV</p>
