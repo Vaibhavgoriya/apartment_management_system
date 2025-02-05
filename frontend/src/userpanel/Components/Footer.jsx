@@ -2,18 +2,18 @@ import "../Assets/css/userstyle.css"; // Minimal additional custom styles
 
 const Footer = () => {
   return (
-    <footer className=" py-5" style={{ backgroundColor: "#D9D9D9" }}>
+    <footer className=" py-5" style={{ backgroundColor: "#D9D9D9", color:"#052C65" }}>
       <div className="container">
         <div className="row">
           {/* Left Section */}
           <div className="col-md-4 mb-4">
-          <h2 style={{ color: "#052C65" }}>RNV</h2>
+          <h2 className=" fw-bold">RNV</h2>
           <p>Copyright © 2023 RNV</p>
             <p>Designed by RNV</p>
           </div>
 
           {/* About Us */}
-          <div className="col-md-4 mb-4">
+          <div className="col-md-4 mb-4" style={{color:"#052C65"}}>
             <h5>About Us</h5>
             <p>
               To bridge the gap between residents and management through
@@ -23,7 +23,7 @@ const Footer = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="col-md-4 mb-4">
+          <div className="col-md-4 mb-4"style={{color:"#052C65"}}>
             <h5>Contact Info</h5>
             <p>Umiya Chowck, Rajkot, Gujarat</p>
             <p>+91 7984767883</p>
@@ -32,7 +32,7 @@ const Footer = () => {
         </div>
 
         {/* Social Links and Bottom Links */}
-        <div className="row align-items-center mt-4">
+        <div className="row align-items-center mt-4"style={{color:"#052C65"}}>
           {/* Follow Us Section */}
           <div className="col-md-6 d-flex align-items-center">
             <p className="mb-0 me-3">Follow Us</p>
@@ -58,5 +58,4 @@ const Footer = () => {
     </footer>
   );
 };
-
 export default Footer;

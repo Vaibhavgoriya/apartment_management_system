@@ -29,7 +29,7 @@ const HeroSection = () => {
           Managing your apartment complex has never been easier – experience
           convenience at your fingertips with RNV.
         </p>
-        <button className="btn  mt-4 d-flex align-items-center" style={{backgroundcolor:"#15154D"}}>
+        <button className="btn  mt-4 d-flex align-items-center" style={{backgroundcolor:"#052C65"}}>
           <span className="dots me-2">
             <span className="dot"></span>
             <span className="dot"></span>
