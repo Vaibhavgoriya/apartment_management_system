@@ -75,9 +75,8 @@ const NoticeBoard = () => {
                           onClick={() => handleShow(notice)}
                           style={{
                             backgroundImage:
-                              "linear-gradient(to right, #007bff, #0056b3)",
-                          }}
-                        >
+                            "linear-gradient(to right, #052C65, #0056b3)",
+                          }}>
                           Know More
                         </button>
                       </td>

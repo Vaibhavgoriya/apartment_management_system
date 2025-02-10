@@ -53,7 +53,6 @@ const HeroSection = () => {
               style={{
                 width: "100%",
                 height: "400px",
-                objectFit: "cover",
                 borderRadius: "15px",
                 boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)"
               }}            />
@@ -66,7 +65,6 @@ const HeroSection = () => {
               style={{
                 width: "100%",
                 height: "400px",
-                objectFit: "cover",
                 borderRadius: "15px",
                 boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)"
               }}            />
@@ -79,7 +77,6 @@ const HeroSection = () => {
               style={{
                 width: "100%",
                 height: "400px",
-                objectFit: "cover",
                 borderRadius: "15px",
                 boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)"
               }}            />

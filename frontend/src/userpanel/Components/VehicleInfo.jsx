@@ -60,7 +60,7 @@ const VehicleInfo = () => {
         >
           <table className="table table-striped table-bordered">
             <thead className="table-dark">
-              <tr style={{backgroundColor:"#052C65"}}>
+              <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Name</th>
                 <th scope="col">Phone Number</th>

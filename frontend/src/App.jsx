@@ -3,7 +3,7 @@ import Userapp from "./userpanel/Components/Userapp";
 
 function App() {
   return (
-      <LandingApp />
+      <Userapp />
   );
 }
 
