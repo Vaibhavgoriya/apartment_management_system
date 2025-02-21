@@ -19,7 +19,7 @@ const Signin = () => {
       <div className="row w-100">
         <div
           className="w-100"
-          style={{ height: "20px", backgroundColor: "#00003E" }}
+          style={{ height: "20px", backgroundColor: "#052C65" }}
         ></div>
 
         {/* Left Section */}
@@ -96,7 +96,7 @@ const Signin = () => {
             <button
               type="submit"
               className="btn btn-primary w-100"
-              style={{ backgroundColor: "#00003E" }}
+              style={{ backgroundColor: "#052C65" }}
             >
               <span> Sign In</span>
             </button>
@@ -105,6 +105,9 @@ const Signin = () => {
           <p className="mt-3 text-muted">
             Forgot Password? <Link to="/Forget">Click here</Link>
           </p>
+          <Link to="/Signin" className="mt-3 text-muted" style={{ textDecoration: "none" }}>
+    &larr; Back
+</Link>
         </div>
       </div>
     </div>

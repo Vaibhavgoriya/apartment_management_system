@@ -80,8 +80,8 @@ const WhyChooseUs = () => {
             {/* Box 1 */}
             <div className="col-6">
               <div
-                className="d-flex flex-column justify-content-center align-items-center bg-dark text-white rounded shadow"
-                style={{ height: "150px" }}
+                className="d-flex flex-column justify-content-center align-items-center  text-white rounded shadow"
+                style={{ height: "150px", backgroundColor:"#052C65"}}
               >
                 <i className="bi bi-key fs-1 text-warning"></i>
                 <h5 className="mt-2 fw-bold">10,000+</h5>

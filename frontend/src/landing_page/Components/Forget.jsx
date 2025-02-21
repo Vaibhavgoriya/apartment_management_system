@@ -10,10 +10,7 @@ const Forget = () => {
       style={{ minHeight: "100vh", overflow: "hidden" }}
     >
       {/* Top Bar */}
-      <div
-        className="w-100"
-        style={{ height: "20px", backgroundColor: "#00003E" }}
-      ></div>
+      <div className="w-100" style={{ height: "20px", backgroundColor: "#00003E" }}></div>
 
       {/* Main Content */}
       <div className="row w-100 h-100">
@@ -42,32 +39,15 @@ const Forget = () => {
                 required
               />
             </div>
-            <br />
-            <button
-              type="submit"
-              className="btn w-100"
-              style={{ backgroundColor: "#00003E", color: "#fff" }}
-            >
-              <Link
-                to="/Reset"
-                style={{
-                  color: "#fff",
-                  textDecoration: "none",
-                  display: "block",
-                  width: "100%",
-                }}
-              >
-                Send OTP
-              </Link>
+            <br/>
+            <button type="submit" className="btn w-100" style={{ backgroundColor: "#00003E", color: "#fff" }}>
+            <Link to="/Reset" style={{ color: "#fff", textDecoration: "none", display: "block", width: "100%" }}>Send OTP</Link>
             </button>
           </form>
-          <Link
-            to="/Sign_in"
-            className="mt-3 text-muted"
-            style={{ textDecoration: "none" }}
-          >
-            &larr; Back
-          </Link>
+          <Link to="/Sign-in" className="mt-3 text-muted" style={{ textDecoration: "none" }}>
+    &larr; Back
+</Link>
+
         </div>
 
         {/* Right Section */}

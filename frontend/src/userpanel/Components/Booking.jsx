@@ -68,7 +68,7 @@ function Booking() {
         {/* Title and Subtitle */}
         <div>
           <h1 className="fw-bold text-dark mb-1" style={{ color: "#00003E" }}>
-            Hall Booking 
+            Hall Booking
           </h1>
           <p className="text-muted mb-0">
             Easily manage and book halls for your events
@@ -225,17 +225,17 @@ function Booking() {
                     ></textarea>
                   </div>
                   <div className="d-flex justify-content-center">
-                  <button
-                    type="submit"
-                    className="btn btn-dark w-40"
-                    style={{
-                      backgroundImage:
-                        "linear-gradient(to right, #007bff, #0056b3)",
-                    }}
-                  >
-                    Submit Request
-                  </button>
-                </div>
+                    <button
+                      type="submit"
+                      className="btn btn-dark w-40"
+                      style={{
+                        backgroundImage:
+                          "linear-gradient(to right, #052C65, #0056b3)",
+                      }}
+                    >
+                      Submit Request
+                    </button>
+                  </div>
                 </form>
               </div>
             )}

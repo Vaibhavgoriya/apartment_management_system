@@ -8,7 +8,7 @@ const Confirm = () => {
       {/* Top Blue Line */}
       <div
         className="w-100"
-        style={{ height: "20px", backgroundColor: "#00003E" }}
+        style={{ height: "20px", backgroundColor: "#052C65" }}
       ></div>
 
       {/* Success Message Section */}
@@ -31,7 +31,7 @@ const Confirm = () => {
         <button
           type="submit"
           className="btn w-100"
-          style={{ backgroundColor: "#00003E" }}
+          style={{ backgroundColor: "#052C65" }}
         >
           <Link
             to="/sign_in"

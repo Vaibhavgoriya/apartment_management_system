@@ -75,9 +75,10 @@ const Navbar = () => {
 
           {/* Sign In Button */}
           <div className="d-flex">
-            <NavLink to="/sign_in" className="btn btn-warning">
-              Sign In
-            </NavLink>
+          <NavLink to="/sign_in" className="btn btn-warning">
+  Sign In
+</NavLink>
+
           </div>
         </div>
       </div>

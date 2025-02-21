@@ -51,7 +51,7 @@ const Maintenance = () => {
                     className="btn btn-primary btn-sm text-white"
                     style={{
                       backgroundImage:
-                        "linear-gradient(to right, #007bff, #0056b3)",
+                      "linear-gradient(to right, #052C65, #0056b3)",
                       borderRadius: "8px",
                     }}
                   >

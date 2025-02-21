@@ -207,7 +207,7 @@ const AddVisitorPage = () => {
                     className="btn btn-dark w-40"
                     style={{
                       backgroundImage:
-                        "linear-gradient(to right, #007bff, #0056b3)",
+                      "linear-gradient(to right, #052C65, #0056b3)",
                     }}
                   >
                     Submit Request
