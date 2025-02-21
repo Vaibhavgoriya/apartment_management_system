@@ -5,17 +5,19 @@ const AdminVisitorManagementPage = () => {
     {
       id: 1,
       visitor: "Radhesh",
+      contact: "9876543210",
       resident: "Vaibhav",
       purpose: "Delivery",
-      visitDate: "2025-01-15",
+      visitDate: "2025-01-15T10:30",
       status: "Pending",
     },
     {
       id: 2,
       visitor: "Nishant",
+      contact: "8765432109",
       resident: "Jay",
       purpose: "Guest",
-      visitDate: "2025-01-16",
+      visitDate: "2025-01-16T14:00",
       status: "Pending",
     },
   ]);
@@ -24,18 +26,20 @@ const AdminVisitorManagementPage = () => {
     {
       id: 3,
       visitor: "Jenil",
+      contact: "7896541230",
       resident: "Krupansu",
       purpose: "Maintenance",
-      checkIn: "10:00 AM",
-      checkOut: "1:00 PM",
+      checkIn: "2025-01-15T10:00",
+      checkOut: "2025-01-15T13:00",
       status: "Exited",
     },
     {
       id: 4,
       visitor: "Nenish",
+      contact: "7893216540",
       resident: "VG",
       purpose: "Guest",
-      checkIn: "11:00 AM",
+      checkIn: "2025-01-16T11:00",
       checkOut: null,
       status: "Checked-In",
     },
@@ -43,6 +47,7 @@ const AdminVisitorManagementPage = () => {
 
   const [newVisitor, setNewVisitor] = useState({
     visitor: "",
+    contact: "",
     resident: "",
     purpose: "",
     visitDate: "",
@@ -59,7 +64,7 @@ const AdminVisitorManagementPage = () => {
         ...approvedVisitor,
         checkIn: null,
         checkOut: null,
-        status: "Pending Check-In", // Update status to Pending Check-In after approval
+        status: "Pending Check-In",
       },
     ]);
   };
@@ -76,8 +81,8 @@ const AdminVisitorManagementPage = () => {
         log.id === id
           ? {
               ...log,
-              checkIn: new Date().toLocaleTimeString(), // Set current time for check-in
-              status: "Checked-In", // Change status to "Checked-In"
+              checkIn: new Date().toISOString().slice(0, 16), // Store as DateTime format
+              status: "Checked-In",
             }
           : log
       )
@@ -91,7 +96,7 @@ const AdminVisitorManagementPage = () => {
         log.id === id
           ? {
               ...log,
-              checkOut: new Date().toLocaleTimeString(),
+              checkOut: new Date().toISOString().slice(0, 16),
               status: "Exited",
             }
           : log
@@ -103,16 +108,18 @@ const AdminVisitorManagementPage = () => {
   const handleAddVisitor = () => {
     if (
       newVisitor.visitor &&
+      newVisitor.contact &&
       newVisitor.resident &&
       newVisitor.purpose &&
       newVisitor.visitDate
     ) {
       const newLog = {
-        id: visitorLog.length + 1, // Assign a unique ID
+        id: visitorLog.length + 1,
         visitor: newVisitor.visitor,
+        contact: newVisitor.contact,
         resident: newVisitor.resident,
         purpose: newVisitor.purpose,
-        checkIn: new Date().toLocaleTimeString(),
+        checkIn: new Date().toISOString().slice(0, 16),
         checkOut: null,
         status: "Checked-In",
       };
@@ -120,6 +127,7 @@ const AdminVisitorManagementPage = () => {
       setVisitorLog([...visitorLog, newLog]);
       setNewVisitor({
         visitor: "",
+        contact: "",
         resident: "",
         purpose: "",
         visitDate: "",
@@ -145,9 +153,10 @@ const AdminVisitorManagementPage = () => {
               <tr>
                 <th>ID</th>
                 <th>Visitor</th>
+                <th>Contact</th>
                 <th>Resident</th>
                 <th>Purpose</th>
-                <th>Visit Date</th>
+                <th>Visit Date & Time</th>
                 <th>Actions</th>
               </tr>
             </thead>
@@ -156,9 +165,10 @@ const AdminVisitorManagementPage = () => {
                 <tr key={req.id}>
                   <td>{req.id}</td>
                   <td>{req.visitor}</td>
+                  <td>{req.contact}</td>
                   <td>{req.resident}</td>
                   <td>{req.purpose}</td>
-                  <td>{req.visitDate}</td>
+                  <td>{req.visitDate.replace("T", " ")}</td>
                   <td>
                     <button
                       className="btn btn-success me-2"
@@ -189,10 +199,11 @@ const AdminVisitorManagementPage = () => {
               <tr>
                 <th>ID</th>
                 <th>Visitor</th>
+                <th>Contact</th>
                 <th>Resident</th>
                 <th>Purpose</th>
-                <th>Check-In</th>
-                <th>Check-Out</th>
+                <th>Check-In Date & Time</th>
+                <th>Check-Out Date & Time</th>
                 <th>Status</th>
                 <th>Actions</th>
               </tr>
@@ -202,18 +213,27 @@ const AdminVisitorManagementPage = () => {
                 <tr key={log.id}>
                   <td>{log.id}</td>
                   <td>{log.visitor}</td>
+                  <td>{log.contact}</td>
                   <td>{log.resident}</td>
                   <td>{log.purpose}</td>
-                  <td>{log.checkIn || "Not Checked-In"}</td>
-                  <td>{log.checkOut || "Not Checked-Out"}</td>
+                  <td>
+                    {log.checkIn
+                      ? log.checkIn.replace("T", " ")
+                      : "Not Checked-In"}
+                  </td>
+                  <td>
+                    {log.checkOut
+                      ? log.checkOut.replace("T", " ")
+                      : "Not Checked-Out"}
+                  </td>
                   <td>
                     <span
-                      className={`badge ${
+                      className={`badge bg-${
                         log.status === "Checked-In"
-                          ? "bg-success"
+                          ? "success"
                           : log.status === "Exited"
-                          ? "bg-secondary"
-                          : "bg-warning"
+                          ? "secondary"
+                          : "warning"
                       }`}
                     >
                       {log.status}
@@ -244,63 +264,57 @@ const AdminVisitorManagementPage = () => {
         </div>
       </div>
 
-      {/* Add Visitor Manually */}
       <div className="mt-4">
-        <h5 className="fw-bold">Add Visitor Manually</h5>
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            handleAddVisitor();
-          }}
-        >
-          <div className="mb-3">
-            <label>Visitor Name</label>
-            <input
-              type="text"
-              className="form-control"
-              value={newVisitor.visitor}
-              onChange={(e) =>
-                setNewVisitor({ ...newVisitor, visitor: e.target.value })
-              }
-            />
-          </div>
-          <div className="mb-3">
-            <label>Resident Name</label>
-            <input
-              type="text"
-              className="form-control"
-              value={newVisitor.resident}
-              onChange={(e) =>
-                setNewVisitor({ ...newVisitor, resident: e.target.value })
-              }
-            />
-          </div>
-          <div className="mb-3">
-            <label>Purpose</label>
-            <input
-              type="text"
-              className="form-control"
-              value={newVisitor.purpose}
-              onChange={(e) =>
-                setNewVisitor({ ...newVisitor, purpose: e.target.value })
-              }
-            />
-          </div>
-          <div className="mb-3">
-            <label>Visit Date</label>
-            <input
-              type="date"
-              className="form-control"
-              value={newVisitor.visitDate}
-              onChange={(e) =>
-                setNewVisitor({ ...newVisitor, visitDate: e.target.value })
-              }
-            />
-          </div>
-          <button type="submit" className="btn btn-primary">
+        <h5 className="fw-bold">Add Visitor</h5>
+        <div className="row g-3">
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Visitor Name"
+            value={newVisitor.visitor}
+            onChange={(e) =>
+              setNewVisitor({ ...newVisitor, visitor: e.target.value })
+            }
+          />
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Contact Number"
+            value={newVisitor.contact}
+            onChange={(e) =>
+              setNewVisitor({ ...newVisitor, contact: e.target.value })
+            }
+          />
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Resident Name"
+            value={newVisitor.resident}
+            onChange={(e) =>
+              setNewVisitor({ ...newVisitor, resident: e.target.value })
+            }
+          />
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Purpose"
+            value={newVisitor.purpose}
+            onChange={(e) =>
+              setNewVisitor({ ...newVisitor, purpose: e.target.value })
+            }
+          />
+          <input
+            type="datetime-local"
+            className="form-control"
+            value={newVisitor.visitDate}
+            onChange={(e) =>
+              setNewVisitor({ ...newVisitor, visitDate: e.target.value })
+            }
+          />
+          <button className="btn btn-primary" onClick={handleAddVisitor}>
             Add Visitor
           </button>
-        </form>
+        </div>
       </div>
     </div>
   );

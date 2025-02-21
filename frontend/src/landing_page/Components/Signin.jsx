@@ -8,8 +8,6 @@ const Signin = () => {
 
   const handleSignIn = (e) => {
     e.preventDefault();
-    // Add your sign-in logic here, e.g., authentication
-    // On successful sign-in, navigate to the home page
     navigate("/"); // Redirect to the home page after sign-in
   };
 
@@ -23,13 +21,10 @@ const Signin = () => {
           className="w-100"
           style={{ height: "20px", backgroundColor: "#00003E" }}
         ></div>
+
         {/* Left Section */}
         <div className="col-md-6 d-flex flex-column justify-content-center align-items-center bg-light p-5">
-          <img
-            src={login} // Update the path to your image
-            alt="Efficient Living"
-            className="img-fluid"
-          />
+          <img src={login} alt="Efficient Living" className="img-fluid" />
           <h2 className="mt-4 text-center">Efficient Living Starts Here</h2>
           <p className="text-center">
             Our platform is built to meet the needs of apartment communities
@@ -38,14 +33,20 @@ const Signin = () => {
         </div>
 
         {/* Right Section */}
-        <div
-          className="col-md-6 d-flex flex-column justify-content-center align-items-center bg-white p-5"
-          style={{ paddingTop: "20px" }}
-        >
+        <div className="col-md-6 d-flex flex-column justify-content-center align-items-center bg-white p-5">
+          {/* Back Arrow Button - Placed at Left Side */}
+          <div className="d-flex justify-content-start w-100 mb-3">
+            <button
+              onClick={() => navigate("/")}
+              className="btn text-dark fs-5"
+            >
+              ← Back
+            </button>
+          </div>
+
           <div className="text-center mb-4">
             <img
-              src={logo} // Update the path to your logo
-              //alt="RNV Estate"
+              src={logo}
               className="img-fluid mb-2"
               style={{ width: "250px" }}
             />
@@ -53,7 +54,11 @@ const Signin = () => {
             <p className="text-muted">Sign in with your details to continue</p>
           </div>
 
-          <form className="w-100" style={{ maxWidth: "400px" }} onSubmit={handleSignIn}>
+          <form
+            className="w-100"
+            style={{ maxWidth: "400px" }}
+            onSubmit={handleSignIn}
+          >
             <div className="mb-3">
               <label htmlFor="email" className="form-label">
                 Email

@@ -12,6 +12,7 @@ const Home = () => {
       email: "rjoshi123@rku.ac.in",
       wing: "A",
       familyMembersCount: 4,
+      status: "Active",
     },
     {
       id: 2,
@@ -21,6 +22,7 @@ const Home = () => {
       email: "vgoriya456@rku.ac.in",
       wing: "B",
       familyMembersCount: 3,
+      status: "Active",
     },
     {
       id: 3,
@@ -30,6 +32,7 @@ const Home = () => {
       email: "ntalavita789@rku.ac.in",
       wing: "C",
       familyMembersCount: 2,
+      status: "Active",
     },
     {
       id: 4,
@@ -39,6 +42,7 @@ const Home = () => {
       email: "jgajera258@rku.ac.in",
       wing: "D",
       familyMembersCount: 5,
+      status: "Active",
     },
   ];
 
@@ -184,28 +188,22 @@ const Home = () => {
                       <th>Email</th>
                       <th>Wing</th>
                       <th>Family Members</th>
+                      <th>Status</th>
                     </tr>
                   </thead>
                   <tbody>
-                    {filteredMembers.length > 0 ? (
-                      filteredMembers.map((member, index) => (
-                        <tr key={index}>
-                          <td>{member.id}</td>
-                          <td>{member.name}</td>
-                          <td>{member.apartment}</td>
-                          <td>{member.contact}</td>
-                          <td>{member.email}</td>
-                          <td>{member.wing}</td>
-                          <td>{member.familyMembersCount}</td>
-                        </tr>
-                      ))
-                    ) : (
-                      <tr>
-                        <td colSpan="7" className="text-center text-muted">
-                          No members found.
-                        </td>
+                    {filteredMembers.map((member, index) => (
+                      <tr key={index}>
+                        <td>{index + 1}</td>
+                        <td>{member.name}</td>
+                        <td>{member.apartment}</td>
+                        <td>{member.contact}</td>
+                        <td>{member.email}</td>
+                        <td>{member.wing}</td>
+                        <td>{member.familyMembersCount}</td>
+                        <td>{member.status}</td>
                       </tr>
-                    )}
+                    ))}
                   </tbody>
                 </table>
               </div>
