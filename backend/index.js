@@ -7,10 +7,22 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Importing Routes
-const memberRoutes = require("./Routes/members.route");
+const memberRoutes = require("./src/Routes/membersRoute");
+const maintenanceRoutes = require("./src/Routes/maintenanceRoutes");
+const complaintRoutes = require("./src/Routes/complaintsRouter");
+const communityHallRoutes = require("./src/Routes/communityHallRoutes");
+const noticeBoardRouter = require("./src/Routes/noticeBoardRoutes");
+const vehicleRouter = require("./src/Routes/vehicleRoutes");
+const visitorRoutes = require("./src/Routes/visitorRoutes");
 
 // Using Routes
 app.use("/api/members", memberRoutes);
+app.use("/api/maintenance", maintenanceRoutes);
+app.use("/api/complaints", complaintRoutes);
+app.use("/api/bookings", communityHallRoutes);
+app.use("/api/notices", noticeBoardRouter);
+app.use("/api/vehicles", vehicleRouter);
+app.use("/api/visitors", visitorRoutes);
 
 // Default Route
 app.get("/", (req, res) => {

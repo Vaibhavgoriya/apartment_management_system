@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const memberController = require("../Controllers/members.controller");
+const memberController = require("../Controllers/membersController");
 
 // Routes for Members
 router.get("/", memberController.getAllMembers); // Get all members
