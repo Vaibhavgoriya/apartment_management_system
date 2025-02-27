@@ -32,3 +32,6 @@ coverage/
 # Misc
 *.swp
 *.swo
+
+# Ignore PostgreSQL connection file
+src/DbConnection/postgresdb.js

@@ -1,6 +1,17 @@
 const express = require("express");
+const cors = require("cors"); // Import CORS
+
 const app = express();
 const port = 4545;
+
+// Enable CORS for frontend requests
+app.use(
+  cors({
+    origin: "http://localhost:5173", // Allow requests from frontend
+    methods: "GET, POST, PUT, DELETE", // Specify allowed request methods
+    credentials: true, // Allow credentials (cookies, auth headers)
+  })
+);
 
 // Middleware for parsing JSON request bodies
 app.use(express.json());
