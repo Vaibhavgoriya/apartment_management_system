@@ -105,9 +105,7 @@ const Signin = () => {
           <p className="mt-3 text-muted">
             Forgot Password? <Link to="/Forget">Click here</Link>
           </p>
-          <Link to="/Signin" className="mt-3 text-muted" style={{ textDecoration: "none" }}>
-    &larr; Back
-</Link>
+         
         </div>
       </div>
     </div>
