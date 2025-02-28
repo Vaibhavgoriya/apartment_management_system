@@ -1,41 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const AdminAddMembers = () => {
-  const [members, setMembers] = useState([
-    {
-      id: 1,
-      name: "Radhesh",
-      apartment: "101",
-      contact: "123-456-7890",
-      email: "rjoshi123@rku.ac.in",
-      wing: "A",
-      familyMembersCount: 4,
-      status: "Active",
-    },
-    {
-      id: 2,
-      name: "Vaibhav",
-      apartment: "102",
-      contact: "987-654-3210",
-      email: "vgoriya456@rku.ac.in",
-      wing: "B",
-      familyMembersCount: 3,
-      status: "Inactive",
-    },
-    {
-      id: 3,
-      name: "Nishant",
-      apartment: "103",
-      contact: "555-555-5555",
-      email: "ntalavita789@rku.ac.in",
-      wing: "C",
-      familyMembersCount: 2,
-      status: "Active",
-    },
-  ]);
-
-  
-
+  const [members, setMembers] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [filterStatus, setFilterStatus] = useState("All");
   const [newMember, setNewMember] = useState({
@@ -48,20 +14,34 @@ const AdminAddMembers = () => {
   });
   const [editMember, setEditMember] = useState(null);
 
+  // Fetch members from API
+  useEffect(() => {
+    fetch("http://localhost:4545/api/members/")
+      .then((response) => response.json())
+      .then((data) => setMembers(Array.isArray(data) ? data : []))
+      .catch((error) => console.error("Error fetching members:", error));
+  }, []);
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setNewMember((prev) => ({ ...prev, [name]: value }));
   };
 
+  // Add Member (POST request)
   const handleAddMember = () => {
     if (Object.values(newMember).some((value) => value.trim() === "")) {
       alert("Please fill out all fields.");
       return;
     }
-    setMembers((prev) => [
-      ...prev,
-      { ...newMember, id: members.length + 1, status: "Active" },
-    ]);
+    fetch("http://localhost:4545/api/members/", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ ...newMember, status: "Active" }),
+    })
+      .then((response) => response.json())
+      .then((data) => setMembers((prev) => [...prev, data]))
+      .catch((error) => console.error("Error adding member:", error));
+
     setNewMember({
       name: "",
       apartment: "",
@@ -72,42 +52,51 @@ const AdminAddMembers = () => {
     });
   };
 
-  const handleToggleStatus = (id) => {
-    setMembers((prev) =>
-      prev.map((member) =>
-        member.id === id
-          ? {
-              ...member,
-              status: member.status === "Active" ? "Inactive" : "Active",
-            }
-          : member
-      )
-    );
+  // Toggle Member Status (PATCH request)
+  const handleToggleStatus = (id, currentStatus) => {
+    const newStatus = currentStatus === "Active" ? "Inactive" : "Active";
+    fetch(`http://localhost:4545/api/members/${id}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ status: newStatus }),
+    })
+      .then(() => {
+        setMembers((prev) =>
+          prev.map((member) =>
+            member.id === id ? { ...member, status: newStatus } : member
+          )
+        );
+      })
+      .catch((error) => console.error("Error updating status:", error));
   };
 
-  const handleEditClick = (member) => {
-    setEditMember({ ...member });
-  };
-
-  const handleEditChange = (e) => {
-    const { name, value } = e.target;
-    setEditMember((prev) => ({ ...prev, [name]: value }));
-  };
-
+  // Edit Member (PUT request)
   const handleSaveEdit = () => {
-    setMembers((prev) =>
-      prev.map((member) => (member.id === editMember.id ? editMember : member))
-    );
-    setEditMember(null);
+    fetch(`http://localhost:4545/api/members/${editMember.id}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(editMember),
+    })
+      .then(() => {
+        setMembers((prev) =>
+          prev.map((member) =>
+            member.id === editMember.id ? editMember : member
+          )
+        );
+        setEditMember(null);
+      })
+      .catch((error) => console.error("Error updating member:", error));
   };
 
   const filteredMembers = members.filter(
     (member) =>
       (filterStatus === "All" || member.status === filterStatus) &&
-      (member.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        member.apartment.includes(searchTerm) ||
-        member.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        member.contact.includes(searchTerm))
+      ((member.name &&
+        member.name.toLowerCase().includes(searchTerm.toLowerCase())) ||
+        (member.apartment && member.apartment.includes(searchTerm)) ||
+        (member.email &&
+          member.email.toLowerCase().includes(searchTerm.toLowerCase())) ||
+        (member.contact && member.contact.includes(searchTerm)))
   );
 
   return (
@@ -127,7 +116,7 @@ const AdminAddMembers = () => {
               {Object.keys(newMember).map((key) => (
                 <div className="col-md-6" key={key}>
                   <label className="form-label">
-                    {key.replace(/([A-Z])/g, " $1").trim()}
+                    {key.replace(/([A-Z])/g, " $1")}
                   </label>
                   <input
                     type="text"
@@ -179,112 +168,53 @@ const AdminAddMembers = () => {
                   <th>Wing</th>
                   <th>Family Members</th>
                   <th>Status</th>
-                  <th>Actions</th>
+                  <th>Action</th>
                 </tr>
               </thead>
               <tbody>
-                {filteredMembers.map((member, index) => (
-                  <tr key={index}>
-                    <td>{index + 1}</td>
-                    <td>{member.name}</td>
-                    <td>{member.apartment}</td>
-                    <td>{member.contact}</td>
-                    <td>{member.email}</td>
-                    <td>{member.wing}</td>
-                    <td>{member.familyMembersCount}</td>
-                    <td>
-                      <button
-                        className={`btn btn-sm ${
-                          member.status === "Active"
-                            ? "btn-success"
-                            : "btn-danger"
-                        }`}
-                        onClick={() => handleToggleStatus(member.id)}
-                      >
-                        {member.status}
-                      </button>
-                    </td>
-                    <td>
-                      <button
-                        className="btn btn-sm btn-warning"
-                        onClick={() => handleEditClick(member)}
-                        data-bs-toggle="modal"
-                        data-bs-target="#editModal"
-                      >
-                        Edit
-                      </button>
+                {filteredMembers.length > 0 ? (
+                  filteredMembers.map((member, index) => (
+                    <tr key={member.id || index}>
+                      <td>{index + 1}</td>
+                      <td>{member.name}</td>
+                      <td>{member.apartment}</td>
+                      <td>{member.contact}</td>
+                      <td>{member.email}</td>
+                      <td>{member.wing}</td>
+                      <td>{member.familyMembersCount}</td>
+                      <td>
+                        <button
+                          className={`btn btn-sm ${
+                            member.status === "Active"
+                              ? "btn-success"
+                              : "btn-danger"
+                          }`}
+                          onClick={() =>
+                            handleToggleStatus(member.id, member.status)
+                          }
+                        >
+                          {member.status}
+                        </button>
+                      </td>
+                      <td>
+                        <button
+                          className="btn btn-warning btn-sm"
+                          onClick={() => setEditMember(member)}
+                        >
+                          Edit
+                        </button>
+                      </td>
+                    </tr>
+                  ))
+                ) : (
+                  <tr>
+                    <td colSpan="9" className="text-center py-3">
+                      No members found.
                     </td>
                   </tr>
-                ))}
+                )}
               </tbody>
             </table>
-          </div>
-        </div>
-      </div>
-      {/* Edit Member Modal */}
-      <div
-        className="modal fade"
-        id="editModal"
-        tabIndex="-1"
-        aria-labelledby="editModalLabel"
-        aria-hidden="true"
-      >
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h5 className="modal-title" id="editModalLabel">
-                Edit Member
-              </h5>
-              <button
-                type="button"
-                className="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div className="modal-body">
-              {editMember && (
-                <>
-                  {Object.keys(editMember).map(
-                    (key) =>
-                      key !== "id" &&
-                      key !== "status" && ( // Prevent editing ID & status
-                        <div className="mb-3" key={key}>
-                          <label className="form-label">
-                            {key.replace(/([A-Z])/g, " $1").trim()}
-                          </label>
-                          <input
-                            type="text"
-                            name={key}
-                            className="form-control"
-                            value={editMember[key]}
-                            onChange={handleEditChange}
-                          />
-                        </div>
-                      )
-                  )}
-                </>
-              )}
-            </div>
-            <div className="modal-footer">
-              <button
-                type="button"
-                className="btn btn-secondary"
-                data-bs-dismiss="modal"
-              >
-                Cancel
-              </button>
-              <button
-                type="button"
-                className="btn btn-primary"
-                onClick={() => {
-                  handleSaveEdit();
-                  document.querySelector("#editModal .btn-close").click(); // Close modal after saving
-                }}
-              >
-                Save Changes
-              </button>
-            </div>
           </div>
         </div>
       </div>
