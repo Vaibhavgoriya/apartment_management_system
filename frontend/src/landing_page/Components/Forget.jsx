@@ -5,7 +5,10 @@ import { Link } from "react-router-dom";
 
 const Forget = () => {
   return (
-    <div className="container-fluid p-0" style={{ minHeight: "100vh", overflow: "hidden" }}>
+    <div
+      className="container-fluid p-0"
+      style={{ minHeight: "100vh", overflow: "hidden" }}
+    >
       {/* Top Bar */}
       <div className="w-100" style={{ height: "20px", backgroundColor: "#00003E" }}></div>
 
@@ -13,7 +16,12 @@ const Forget = () => {
       <div className="row w-100 h-100">
         {/* Left Section */}
         <div className="col-md-6 d-flex flex-column justify-content-center align-items-center bg-whaite">
-          <img src={logo} alt="RNV Estate Logo" className="img-fluid mb-3" style={{ width: "200px" }} />
+          <img
+            src={logo}
+            alt="RNV Estate Logo"
+            className="img-fluid mb-3"
+            style={{ width: "200px" }}
+          />
           <h3 className="text-center mb-3">Forgot Password</h3>
           <p className="text-center text-muted mb-4">
             Enter your email to reset your password
@@ -53,7 +61,8 @@ const Forget = () => {
             />
             <h4>Efficient Living Starts Here</h4>
             <p className="text-muted">
-              Our platform is built to meet the needs of apartment communities with intuitive, practical, and accessible features.
+              Our platform is built to meet the needs of apartment communities
+              with intuitive, practical, and accessible features.
             </p>
             <p className="text-muted small">
               Copyright © 2023 RNV Designed by RNV

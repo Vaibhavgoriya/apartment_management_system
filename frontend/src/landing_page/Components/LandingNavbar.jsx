@@ -1,16 +1,19 @@
 import { NavLink } from "react-router-dom";
-import "../Assets/css/landingstyle.css"; // Ensure this path is correct
+import "../Assets/css/landingstyle.css"; // Your custom CSS
 
-const LandingNavbar = () => {
+const Navbar = () => {
   return (
     <nav
-      className="navbar navbar-expand-lg"
-      style={{ backgroundColor: "#000033" }}
+      className="navbar navbar-expand-lg sticky-top"
+      style={{ backgroundColor: "#052C65" }}
     >
       <div className="container">
-        <NavLink className="navbar-brand fw-bold text-white fs-2" to="/">
+        {/* Brand Logo */}
+        <a href="#hero" className="navbar-brand fw-bold text-white fs-2">
           RNV
-        </NavLink>
+        </a>
+
+        {/* Mobile Toggle Button */}
         <button
           className="navbar-toggler"
           type="button"
@@ -20,85 +23,67 @@ const LandingNavbar = () => {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span className="navbar-toggler-icon">
-            {/* Add a fallback SVG for the icon */}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 16 16"
-              fill="white"
-              width="20"
-              height="20"
-            >
-              <path
-                fillRule="evenodd"
-                d="M1.5 12a.5.5 0 0 1 0-1h13a.5.5 0 0 1 0 1h-13zm0-4a.5.5 0 0 1 0-1h13a.5.5 0 0 1 0 1h-13zm0-4a.5.5 0 0 1 0-1h13a.5.5 0 0 1 0 1h-13z"
-              />
-            </svg>
-          </span>
+          <span className="navbar-toggler-icon"></span>
         </button>
+
+        {/* Navbar Items */}
         <div
-          className="collapse navbar-collapse justify-content-center"
+          className="collapse navbar-collapse justify-content-between"
           id="navbarNav"
         >
-          <ul className="navbar-nav text-center">
+          <ul className="navbar-nav mx-auto text-center">
             <li className="nav-item">
               <NavLink
-                className={({ isActive }) =>
-                  `nav-link text-white ${isActive ? "active" : ""}`
-                }
                 to="/"
+                className="nav-link text-white"
+                onClick={() => {
+                  const heroSection = document.getElementById("hero");
+                  if (heroSection) {
+                    heroSection.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
               >
                 Home
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink
-                className={({ isActive }) =>
-                  `nav-link text-white ${isActive ? "active" : ""}`
-                }
-                to="/maintenance"
-              >
+              <a href="#aboutUs" className="nav-link text-white">
                 About Us
-              </NavLink>
+              </a>
             </li>
             <li className="nav-item">
-              <NavLink
-                className={({ isActive }) =>
-                  `nav-link text-white ${isActive ? "active" : ""}`
-                }
-                to="/complain"
-              >
+              <a href="#whyChooseUs" className="nav-link text-white">
+                Why Choose Us
+              </a>
+            </li>
+            <li className="nav-item">
+              <a href="#services" className="nav-link text-white">
                 Services
-              </NavLink>
+              </a>
             </li>
             <li className="nav-item">
-              <NavLink
-                className={({ isActive }) =>
-                  `nav-link text-white ${isActive ? "active" : ""}`
-                }
-                to="/booking"
-              >
+              <a href="#apartments" className="nav-link text-white">
                 Apartments
-              </NavLink>
+              </a>
             </li>
             <li className="nav-item">
-              <NavLink
-                className={({ isActive }) =>
-                  `nav-link text-white ${isActive ? "active" : ""}`
-                }
-                to="/notice-board"
-              >
+              <a href="#contactUs" className="nav-link text-white">
                 Contact Us
-              </NavLink>
+              </a>
             </li>
           </ul>
+
+          {/* Sign In Button */}
+          <div className="d-flex">
+          <NavLink to="/sign_in" className="btn btn-warning">
+  Sign In
+</NavLink>
+
+          </div>
         </div>
-        <NavLink to="/sign_in" className="btn btn-warning">
-          Sign In
-        </NavLink>
       </div>
     </nav>
   );
 };
 
-export default LandingNavbar;
+export default Navbar;

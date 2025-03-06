@@ -88,7 +88,7 @@ function Home() {
                     onClick={() => handleShow(user)}
                     style={{
                       backgroundImage:
-                        "linear-gradient(to right, #007bff, #0056b3)",
+                        "linear-gradient(to right, #052C65, #0056b3)",
                     }}
                   >
                     Know More
@@ -117,7 +117,7 @@ function Home() {
               className="modal-content shadow-lg"
               style={{ borderRadius: "15px" }}
             >
-              <div className="modal-header bg-primary text-white">
+              <div className="modal-header  text-white" style={{backgroundColor:"#052C65"}}>
                 <h5 className="modal-title">{selectedUser.name}</h5>
                 <button
                   type="button"

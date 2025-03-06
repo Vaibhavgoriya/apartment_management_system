@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import "../Assets/css/userstyle.css"; // Minimal custom tweaks
+import "../Assets/css/userstyle.css"; // Your custom CSS
 
 const Navbar = () => {
   return (

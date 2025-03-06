@@ -1,10 +1,16 @@
-
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../Assets/css/landingstyle.css"; // Optional custom styles
 import login from "../Assets/image/login.jpg"; // Optional custom styles
 import logo from "../Assets/image/rnvlogo.png"; // Optional custom styles
 
 const Signin = () => {
+  const navigate = useNavigate();
+
+  const handleSignIn = (e) => {
+    e.preventDefault();
+    navigate("/"); // Redirect to the home page after sign-in
+  };
+
   return (
     <div
       className="signin-container d-flex align-items-center justify-content-center"
@@ -13,15 +19,12 @@ const Signin = () => {
       <div className="row w-100">
         <div
           className="w-100"
-          style={{ height: "20px", backgroundColor: "#00003E" }}
+          style={{ height: "20px", backgroundColor: "#052C65" }}
         ></div>
+
         {/* Left Section */}
         <div className="col-md-6 d-flex flex-column justify-content-center align-items-center bg-light p-5">
-          <img
-            src={login} // Update the path to your image
-            alt="Efficient Living"
-            className="img-fluid"
-          />
+          <img src={login} alt="Efficient Living" className="img-fluid" />
           <h2 className="mt-4 text-center">Efficient Living Starts Here</h2>
           <p className="text-center">
             Our platform is built to meet the needs of apartment communities
@@ -30,14 +33,20 @@ const Signin = () => {
         </div>
 
         {/* Right Section */}
-        <div
-          className="col-md-6 d-flex flex-column justify-content-center align-items-center bg-white p-5"
-          style={{ paddingTop: "20px" }}
-        >
+        <div className="col-md-6 d-flex flex-column justify-content-center align-items-center bg-white p-5">
+          {/* Back Arrow Button - Placed at Left Side */}
+          <div className="d-flex justify-content-start w-100 mb-3">
+            <button
+              onClick={() => navigate("/")}
+              className="btn text-dark fs-5"
+            >
+              ← Back
+            </button>
+          </div>
+
           <div className="text-center mb-4">
             <img
-              src={logo} // Update the path to your logo
-              //alt="RNV Estate"
+              src={logo}
               className="img-fluid mb-2"
               style={{ width: "250px" }}
             />
@@ -45,7 +54,11 @@ const Signin = () => {
             <p className="text-muted">Sign in with your details to continue</p>
           </div>
 
-          <form className="w-100" style={{ maxWidth: "400px" }}>
+          <form
+            className="w-100"
+            style={{ maxWidth: "400px" }}
+            onSubmit={handleSignIn}
+          >
             <div className="mb-3">
               <label htmlFor="email" className="form-label">
                 Email
@@ -83,25 +96,16 @@ const Signin = () => {
             <button
               type="submit"
               className="btn btn-primary w-100"
-              style={{ backgroundColor: "#00003E" }}
+              style={{ backgroundColor: "#052C65" }}
             >
-              <Link
-                to="/"
-                style={{
-                  color: "#fff",
-                  textDecoration: "none",
-                  display: "block",
-                  width: "100%",
-                }}
-              >
-                <span> Sign In</span>
-              </Link>{" "}
+              <span> Sign In</span>
             </button>
           </form>
 
           <p className="mt-3 text-muted">
             Forgot Password? <Link to="/Forget">Click here</Link>
           </p>
+         
         </div>
       </div>
     </div>
@@ -109,4 +113,3 @@ const Signin = () => {
 };
 
 export default Signin;
-

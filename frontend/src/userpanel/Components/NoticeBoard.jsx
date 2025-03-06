@@ -34,12 +34,12 @@ const NoticeBoard = () => {
   return (
     <div className="container-fluid bg-light min-vh-100 px-5 py-5">
       {/* Page Header */}
-      <div className="d-flex justify-content-center align-items-center mb-4 text-center">
+      <div className="d-flex justify-content-between align-items-center mb-4">
         <div>
-          <h1 className="fw-bold text-dark" style={{ color: "#00003E" }}>
+          <h1 className="fw-bold text-dark mb-1" style={{ color: "#00003E" }}>
             Notice Board
           </h1>
-          <p className="text-muted">Stay updated with the latest notices.</p>
+          <p className="text-muted mb-0">Stay updated with the latest notices.</p>
         </div>
       </div>
 
@@ -74,10 +74,9 @@ const NoticeBoard = () => {
                           className="btn btn-primary btn-sm rounded-3"
                           onClick={() => handleShow(notice)}
                           style={{
-                            backgroundColor: "#00003E",
-                            color: "white",
-                          }}
-                        >
+                            backgroundImage:
+                            "linear-gradient(to right, #052C65, #0056b3)",
+                          }}>
                           Know More
                         </button>
                       </td>

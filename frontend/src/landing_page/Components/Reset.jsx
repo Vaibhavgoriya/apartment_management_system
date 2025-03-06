@@ -7,7 +7,7 @@ const Reset = () => {
   return (
     <div className="container-fluid p-0" style={{ minHeight: "100vh", overflow: "hidden" }}>
       {/* Top Bar */}
-      <div className="w-100" style={{ height: "20px", backgroundColor: "#00003E" }}></div>
+      <div className="w-100" style={{ height: "20px", backgroundColor: "#052C65" }}></div>
 
       {/* Main Content */}
       <div className="row w-100 h-100">
@@ -43,7 +43,7 @@ const Reset = () => {
                 required
               />
             </div>
-            <button type="submit" className="btn w-100" style={{ backgroundColor: "#00003E", color: "#fff" }}>
+            <button type="submit" className="btn w-100" style={{ backgroundColor: "#052C65", color: "#fff" }}>
               <Link to="/Confirm" style={{ color: "#fff", textDecoration: "none", display: "block", width: "100%" }}>Reset Password</Link>
             </button>
           </form>

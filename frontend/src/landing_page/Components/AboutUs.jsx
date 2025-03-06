@@ -14,7 +14,7 @@ const AboutUs = () => {
     // }, []);
   
     return (
-      <div className="container py-5">
+      <div id="aboutUs" className="container py-5 scroll-section">
         {/* Section Header */}
         <div
           className="text-center mb-5"
@@ -24,7 +24,7 @@ const AboutUs = () => {
           <h2 className="fw-bold">About Us</h2>
           <p className="text-muted">Our Introduction</p>
         </div>
-  
+
         {/* Content Section */}
         <div className="row align-items-center">
           {/* Left Content - Image */}
@@ -44,7 +44,7 @@ const AboutUs = () => {
               }}
             />
           </div>
-  
+
           {/* Right Content */}
           <div className="col-md-8">
             <div className="row g-3">
@@ -67,7 +67,7 @@ const AboutUs = () => {
                   </div>
                 </div>
               </div>
-  
+
               {/* Card 2 */}
               <div
                 className="col-md-4"
@@ -88,7 +88,7 @@ const AboutUs = () => {
                   </div>
                 </div>
               </div>
-  
+
               {/* Card 3 */}
               <div
                 className="col-md-4"
@@ -110,7 +110,7 @@ const AboutUs = () => {
                 </div>
               </div>
             </div>
-  
+
             {/* Description Section */}
             <div
               className="mt-4"
@@ -127,7 +127,7 @@ const AboutUs = () => {
                 apartments are managed!
               </p>
             </div>
-  
+
             {/* Button Section */}
             <div
               className="mt-3"

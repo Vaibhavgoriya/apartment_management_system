@@ -1,112 +1,118 @@
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
-import { Link } from "react-router-dom";
-import "../Assets/css/landingstyle.css"; // Optional custom styles
-import login from "../Assets/image/login.jpg"; // Optional custom styles
-import logo from "../Assets/image/rnvlogo.png"; // Optional custom styles
+const WhyChooseUs = () => {
+    useEffect(() => {
+      AOS.init({
+        duration: 1000,
+        easing: "ease-in-out",
+        once: true,
+      });
+    }, []);
 
-const Signin = () => {
   return (
-    <div
-      className="signin-container d-flex align-items-center justify-content-center"
-      style={{ minHeight: "100vh" }}
-    >
-      <div className="row w-100">
-        <div
-          className="w-100"
-          style={{ height: "20px", backgroundColor: "#00003E" }}
-        ></div>
-        {/* Left Section */}
-        <div className="col-md-6 d-flex flex-column justify-content-center align-items-center bg-light p-5">
-          <img
-            src={login} // Update the path to your image
-            alt="Efficient Living"
-            className="img-fluid"
-          />
-          <h2 className="mt-4 text-center">Efficient Living Starts Here</h2>
-          <p className="text-center">
-            Our platform is built to meet the needs of apartment communities
-            with intuitive, practical, and accessible features.
+    <div className="container py-5" id="whyChooseUs">
+      <div className="row align-items-center">
+        {/* Left Content */}
+        <div className="col-md-6" data-aos="fade-right">
+          <h2 className="fw-bold">Why Choose RNV?</h2>
+          <p className="text-muted">
+            Connecting Communities, Simplifying Lives
           </p>
-        </div>
 
-        {/* Right Section */}
-        <div
-          className="col-md-6 d-flex flex-column justify-content-center align-items-center bg-white p-5"
-          style={{ paddingTop: "20px" }}
-        >
-          <div className="text-center mb-4">
-            <img
-              src={logo} // Update the path to your logo
-              //alt="RNV Estate"
-              className="img-fluid mb-2"
-              style={{ width: "250px" }}
-            />
-            <h3>Sign In</h3>
-            <p className="text-muted">Sign in with your details to continue</p>
+          <div className="mb-4">
+            <div className="d-flex align-items-start mb-3">
+              <div
+                className="rounded-circle bg-warning d-flex justify-content-center align-items-center me-3"
+                style={{ width: "40px", height: "40px" }}
+              >
+                <i className="bi bi-check-lg text-white fs-5"></i>
+              </div>
+              <div>
+                <h6 className="fw-bold">Innovative Solutions</h6>
+                <p className="text-muted small mb-0">
+                  We bring fresh ideas and modern tools to streamline apartment
+                  management.
+                </p>
+              </div>
+            </div>
+
+            <div className="d-flex align-items-start mb-3">
+              <div
+                className="rounded-circle bg-warning d-flex justify-content-center align-items-center me-3"
+                style={{ width: "40px", height: "40px" }}
+              >
+                <i className="bi bi-check-lg text-white fs-5"></i>
+              </div>
+              <div>
+                <h6 className="fw-bold">User-Centric Design</h6>
+                <p className="text-muted small mb-0">
+                  Our platform is built with the needs of residents and managers
+                  in mind.
+                </p>
+              </div>
+            </div>
+
+            <div className="d-flex align-items-start">
+              <div
+                className="rounded-circle bg-warning d-flex justify-content-center align-items-center me-3"
+                style={{ width: "40px", height: "40px" }}
+              >
+                <i className="bi bi-check-lg text-white fs-5"></i>
+              </div>
+              <div>
+                <h6 className="fw-bold">Commitment to Excellence</h6>
+                <p className="text-muted small mb-0">
+                  Although we are just starting, we are driven by a commitment
+                  to deliver exceptional value to our users.
+                </p>
+              </div>
+            </div>
           </div>
 
-          <form className="w-100" style={{ maxWidth: "400px" }}>
-            <div className="mb-3">
-              <label htmlFor="email" className="form-label">
-                Email
-              </label>
-              <input
-                type="email"
-                className="form-control"
-                id="email"
-                placeholder="Enter your email"
-                required
-              />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="password" className="form-label">
-                Password
-              </label>
-              <input
-                type="password"
-                className="form-control"
-                id="password"
-                placeholder="Enter your password"
-                required
-              />
-            </div>
-            <div className="mb-3 form-check">
-              <input
-                type="checkbox"
-                className="form-check-input"
-                id="rememberMe"
-              />
-              <label className="form-check-label" htmlFor="rememberMe">
-                Remember me
-              </label>
-            </div>
-            <button
-              type="submit"
-              className="btn btn-primary w-100"
-              style={{ backgroundColor: "#00003E" }}
-            >
-              <Link
-                to="/"
-                style={{
-                  color: "#fff",
-                  textDecoration: "none",
-                  display: "block",
-                  width: "100%",
-                }}
-              >
-                <span> Sign In</span>
-              </Link>{" "}
-            </button>
-          </form>
+          <button className="btn btn-outline-dark">Learn More</button>
+        </div>
 
-          <p className="mt-3 text-muted">
-            Forgot Password? <Link to="/Forget">Click here</Link>
-          </p>
+        {/* Right Content */}
+        <div className="col-md-6" data-aos="fade-right">
+          <div className="row g-3">
+            {/* Box 1 */}
+            <div className="col-6">
+              <div
+                className="d-flex flex-column justify-content-center align-items-center  text-white rounded shadow"
+                style={{ height: "150px", backgroundColor:"#052C65"}}
+              >
+                <i className="bi bi-key fs-1 text-warning"></i>
+                <h5 className="mt-2 fw-bold">10,000+</h5>
+                <p className="small mb-0">Properties Sold</p>
+              </div>
+            </div>
+
+            {/* Box 2 */}
+            <div className="col-6">
+              <div
+                className="d-flex flex-column justify-content-center align-items-center bg-warning rounded shadow"
+                style={{ height: "150px" }}
+              >
+                <h5 className="text-dark fw-bold">Placeholder 1</h5>
+              </div>
+            </div>
+
+            {/* Box 3 */}
+            <div className="col-12">
+              <div
+                className="d-flex flex-column justify-content-center align-items-center bg-warning rounded shadow"
+                style={{ height: "150px" }}
+              >
+                <h5 className="text-dark fw-bold">Placeholder 2</h5>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   );
 };
 
-export default Signin;
-
+export default WhyChooseUs;

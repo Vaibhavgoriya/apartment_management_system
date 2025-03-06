@@ -8,6 +8,8 @@ const AdminHallBookingPage = () => {
       user: "Nishant",
       hall: "Hall A",
       date: "2025-01-15",
+      timeSlot: "10:00 AM - 12:00 PM",
+      purpose: "Birthday Celebration",
       status: "Pending",
     },
     {
@@ -15,6 +17,8 @@ const AdminHallBookingPage = () => {
       user: "Radhesh",
       hall: "Hall B",
       date: "2025-01-16",
+      timeSlot: "2:00 PM - 4:00 PM",
+      purpose: "Community Meeting",
       status: "Pending",
     },
     {
@@ -22,6 +26,8 @@ const AdminHallBookingPage = () => {
       user: "Vaibhav",
       hall: "Hall C",
       date: "2025-01-17",
+      timeSlot: "6:00 PM - 8:00 PM",
+      purpose: "Wedding Reception",
       status: "Pending",
     },
     {
@@ -29,6 +35,8 @@ const AdminHallBookingPage = () => {
       user: "Nenish",
       hall: "Hall D",
       date: "2025-02-17",
+      timeSlot: "3:00 PM - 5:00 PM",
+      purpose: "Business Seminar",
       status: "Rejected",
     },
   ]);
@@ -70,8 +78,6 @@ const AdminHallBookingPage = () => {
 
   return (
     <div className="container-fluid bg-light mt-4 py-5 px-5">
-      {" "}
-      {/* Light background for the entire page */}
       {/* Header */}
       <div className="row">
         <div className="col">
@@ -92,6 +98,8 @@ const AdminHallBookingPage = () => {
                 <th>User</th>
                 <th>Hall</th>
                 <th>Date</th>
+                <th>Time Slot</th>
+                <th>Purpose</th>
                 <th>Status</th>
                 <th>Actions</th>
               </tr>
@@ -103,6 +111,8 @@ const AdminHallBookingPage = () => {
                   <td>{request.user}</td>
                   <td>{request.hall}</td>
                   <td>{request.date}</td>
+                  <td>{request.timeSlot}</td>
+                  <td>{request.purpose}</td>
                   <td>
                     <span
                       className={`badge ${

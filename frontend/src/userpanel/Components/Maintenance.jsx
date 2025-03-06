@@ -4,8 +4,8 @@ const Maintenance = () => {
       {/* Page Header */}
       <div className="d-flex justify-content-between align-items-center mb-4">
         <div>
-          <h1 className="fw-bold text-dark">Maintenance Dashboard</h1>
-          <p className="text-muted">
+          <h1 className="fw-bold text-dark mb-1">Maintenance Dashboard</h1>
+          <p className="text-muted mb-0">
             Keep track of your pending and paid maintenance payments easily.
           </p>
         </div>
@@ -51,7 +51,7 @@ const Maintenance = () => {
                     className="btn btn-primary btn-sm text-white"
                     style={{
                       backgroundImage:
-                        "linear-gradient(to right, #007bff, #0056b3)",
+                      "linear-gradient(to right, #052C65, #0056b3)",
                       borderRadius: "8px",
                     }}
                   >
